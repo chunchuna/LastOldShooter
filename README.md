@@ -1,2 +1,2 @@
-# LOS2.0-for-godot
+# LOS2.0 -Godot
 Godot project "LOS" remake
