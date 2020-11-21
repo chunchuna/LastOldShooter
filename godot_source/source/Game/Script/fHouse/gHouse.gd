@@ -61,11 +61,11 @@ func _on_bDoorButton_pressed():
 			if mCheckDoorpromission():  # check whether have key in bag ## bag is temp main bag in autoload gd script
 				doorState="open"
 			else:
-				print("lock")	
+				bug.log("door","door is lock",false)
 
 
 		if !doorLock:
-			print("door is open")
+			bug.log("door","door is open",false)
 			doorState="open"    
 	else:
 		# door is open 
@@ -112,7 +112,7 @@ func _on_aHouseArea2d_body_shape_entered(body_id, body, body_shape, area_shape):
 	# player in House 
 	if body:
 		if body.name=="player":
-			print("player in house")
+			bug.log("sys","player in house",false)
 			is_inHouse=true
 			animation.play("HouseMask")
 
