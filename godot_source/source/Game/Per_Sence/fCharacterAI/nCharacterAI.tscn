@@ -58,4 +58,5 @@ shape = SubResource( 3 )
 
 [node name="tMoveTimer" type="Timer" parent="."]
 [connection signal="body_shape_entered" from="Bedamge_node/Area2D" to="Bedamge_node" method="_on_Area2D_body_shape_entered"]
+[connection signal="body_shape_entered" from="nCharacterArea2d" to="nCharacterWeapon" method="_on_nCharacterArea2d_body_shape_entered"]
 [connection signal="timeout" from="tMoveTimer" to="." method="_on_Timer_timeout"]
