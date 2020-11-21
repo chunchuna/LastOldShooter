@@ -5,6 +5,8 @@ extends KinematicBody2D
 onready var sprite:Sprite =$Sprite
 onready var shppe:CollisionShape2D =$shape
 onready var movetimer:Timer =$tMoveTimer
+onready var targetArea2d =$nCharacterArea2d/CollisionShape2D
+onready var characterWeaponNode =$nCharacterWeapon
 
 # data 
 var aiMoveSpeed =80
@@ -45,7 +47,7 @@ func _physics_process(delta):
 	
 	if stateAi =="attck":
 		stateAIattack()
-		
+
 		pass	
 
 func iniAImove():
