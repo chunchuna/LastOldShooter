@@ -18,6 +18,9 @@ var allowMove=true  #是否允许移动
 var moveTimecut = 0.5 # 移动间隔
 var randomMoveTimeCut=false # 随机移动间隔
 
+
+var playerinRange=false # 玩家在范围
+
 var randomMoveTimeCutValueRange={     # 随机移动间隔范围
 	"min":0,
 	"max":0,
@@ -25,12 +28,16 @@ var randomMoveTimeCutValueRange={     # 随机移动间隔范围
 
 var hp =5000
 var homePosition   # 初始位置
+
+
+
 func _ready():
 	homePosition=position
 	iniAImove()
 	
 
 func _process(delta):
+	playerinRange=characterWeaponNode.playerInRange 
 	pass
 	
 	

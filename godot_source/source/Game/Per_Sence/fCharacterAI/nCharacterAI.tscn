@@ -47,11 +47,12 @@ shape = SubResource( 1 )
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="nCharacterWeapon"]
-position = Vector2( 27.8344, 4.49491 )
+position = Vector2( 12.8514, 2.99658 )
 scale = Vector2( 0.223605, 0.223605 )
 texture = ExtResource( 4 )
 
 [node name="nCharacterArea2d" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="nCharacterArea2d"]
 shape = SubResource( 3 )
@@ -59,4 +60,5 @@ shape = SubResource( 3 )
 [node name="tMoveTimer" type="Timer" parent="."]
 [connection signal="body_shape_entered" from="Bedamge_node/Area2D" to="Bedamge_node" method="_on_Area2D_body_shape_entered"]
 [connection signal="body_shape_entered" from="nCharacterArea2d" to="nCharacterWeapon" method="_on_nCharacterArea2d_body_shape_entered"]
+[connection signal="body_shape_exited" from="nCharacterArea2d" to="nCharacterWeapon" method="_on_nCharacterArea2d_body_shape_exited"]
 [connection signal="timeout" from="tMoveTimer" to="." method="_on_Timer_timeout"]
