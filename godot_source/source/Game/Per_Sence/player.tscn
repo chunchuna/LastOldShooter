@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Game/Script/player.gd" type="Script" id=1]
+[ext_resource path="res://Game/Script/fCharacter/gPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Game/Art/Player/Player.png" type="Texture" id=2]
 [ext_resource path="res://Game/Per_Sence/weaponNode.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/Font/cn_.ttf" type="DynamicFontData" id=4]

@@ -1,7 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Game/Font/cn_.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Game/Script/dmg_text.gd" type="Script" id=2]
+[ext_resource path="res://Game/Script/fWeapon/gDamgeText.gd" type="Script" id=2]
+
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 50

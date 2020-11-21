@@ -1,9 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Game/Script/weaponNode.gd" type="Script" id=1]
+[ext_resource path="res://Game/Script/fWeapon/gWeaponNode.gd" type="Script" id=1]
 [ext_resource path="res://Game/Art/light/2DLight.png" type="Texture" id=2]
 [ext_resource path="res://Game/Art/fire_light.png" type="Texture" id=3]
 [ext_resource path="res://Game/Art/weaponTexture/M4A1.png" type="Texture" id=4]
+
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "Auto_fire"

@@ -21,10 +21,10 @@ config/icon="res://icon.png"
 
 [autoload]
 
-WeaponData="*res://Game/Script/weaponData.gd"
+WeaponData="*res://Game/Script/fWeapon/gWeaponData.gd"
 Console="*res://addons/quentincaffeino-console/src/Console.tscn"
-ConsoleMain="*res://Game/Script/ConsoleMain.gd"
-GlobalVar="*res://Game/Script/GlobalVar.gd"
+ConsoleMain="*res://Game/Script/fGlobalData/gConsole.gd"
+GlobalVar="*res://Game/Script/fGlobalData/gGlobalData.gd"
 
 [display]
 

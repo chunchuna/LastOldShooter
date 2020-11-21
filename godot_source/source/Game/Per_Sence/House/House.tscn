@@ -3,7 +3,7 @@
 [ext_resource path="res://Game/Per_Sence/House/sHorWall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Per_Sence/House/sVecWall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Art/House/sHouse_Floor.png" type="Texture" id=3]
-[ext_resource path="res://Game/Script/House.gd" type="Script" id=4]
+[ext_resource path="res://Game/Script/fHouse/gHouse.gd" type="Script" id=4]
 [ext_resource path="res://Game/Art/House/sHouse_door.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
