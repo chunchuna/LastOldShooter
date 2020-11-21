@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Game/Per_Sence/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Per_Sence/testBox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Per_Sence/SenceCamera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Per_Sence/interaction/test-man.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Per_Sence/modSystem/modSystem.tscn" type="PackedScene" id=5]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/Per_Sence/House/House.tscn" type="PackedScene" id=7]
+
+[node name="Sence" type="Node2D"]
+position = Vector2( 0.840881, 0.840942 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -2945.6
+margin_top = -1267.95
+margin_right = 3264.4
+margin_bottom = 3146.05
+color = Color( 0.239216, 0.227451, 0.227451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUD" parent="." instance=ExtResource( 6 )]
+
+[node name="modSystem" parent="." instance=ExtResource( 5 )]
+
+[node name="SenceCamera" parent="." instance=ExtResource( 3 )]
+position = Vector2( 685.097, 567.337 )
+current = true
+editor_draw_screen = false
+
+[node name="YSort" type="YSort" parent="."]
+position = Vector2( -6.10352e-05, 0 )
+
+[node name="player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 423.543, 396.955 )
+
+[node name="test-man2" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 805.209, 112.107 )
+
+[node name="test-man" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 685.097, 112.107 )
+
+[node name="Box" type="Node2D" parent="."]
+
+[node name="testBox" parent="Box" instance=ExtResource( 2 )]
+position = Vector2( 53.0777, 368.855 )
+
+[node name="testBox3" parent="Box" instance=ExtResource( 2 )]
+position = Vector2( 268.573, 201.82 )
+
+[node name="testBox4" parent="Box" instance=ExtResource( 2 )]
+position = Vector2( 53.0777, 201.662 )
+
+[node name="testBox5" parent="Box" instance=ExtResource( 2 )]
+position = Vector2( 272.067, 146.993 )
+
+[node name="testBox6" parent="Box" instance=ExtResource( 2 )]
+position = Vector2( 110.148, 146.52 )
+
+[node name="testBox7" parent="Box" instance=ExtResource( 2 )]
+position = Vector2( 268.416, 252.333 )
+
+[node name="testBox8" parent="Box" instance=ExtResource( 2 )]
+position = Vector2( 53.0778, 485.646 )
+
+[node name="testBox9" parent="Box" instance=ExtResource( 2 )]
+position = Vector2( 268.258, 307.503 )
+
+[node name="testBox10" parent="Box" instance=ExtResource( 2 )]
+position = Vector2( 52.7628, 146.363 )
+
+[node name="testBox11" parent="Box" instance=ExtResource( 2 )]
+position = Vector2( 49.9504, 537.467 )
+
+[node name="testBox12" parent="Box" instance=ExtResource( 2 )]
+position = Vector2( 52.9202, 252.176 )
+
+[node name="testBox13" parent="Box" instance=ExtResource( 2 )]
+position = Vector2( 53.0778, 426.366 )
+
+[node name="testBox14" parent="Box" instance=ExtResource( 2 )]
+position = Vector2( 159.754, 146.678 )
+
+[node name="testBox15" parent="Box" instance=ExtResource( 2 )]
+position = Vector2( 215.066, 146.835 )
+
+[node name="testBox2" parent="Box" instance=ExtResource( 2 )]
+position = Vector2( 53.0777, 307.345 )
+
+[node name="House" parent="." instance=ExtResource( 7 )]
+position = Vector2( -689.985, -662.346 )
+doorLock = false
+
+[node name="House2" parent="." instance=ExtResource( 7 )]
+position = Vector2( -67.731, -660.932 )
+doorLock = false

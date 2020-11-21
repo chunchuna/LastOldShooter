@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"godot_tools.editor_path": "e:\\AGODOT引擎\\Cyberpunk 2077 预先测试版 (A10).exe",
+		"editor.fontFamily": "monospace,Consolas, 'Courier New', monospace",
+		"editor.fontSize": 22
+	}
+}
