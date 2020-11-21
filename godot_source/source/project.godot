@@ -25,6 +25,7 @@ WeaponData="*res://Game/Script/fWeapon/gWeaponData.gd"
 Console="*res://addons/quentincaffeino-console/src/Console.tscn"
 ConsoleMain="*res://Game/Script/fGlobalData/gConsole.gd"
 GlobalVar="*res://Game/Script/fGlobalData/gGlobalData.gd"
+bug="*res://Game/Script/fDebug/gDebug.gd"
 
 [display]
 
