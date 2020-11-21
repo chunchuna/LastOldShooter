@@ -4,13 +4,15 @@
 [ext_resource path="res://Game/Script/fCharacter/fCharacterAI/gCharacterAI.gd" type="Script" id=2]
 [ext_resource path="res://Game/Script/fWeapon/gHurtBox.gd" type="Script" id=3]
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 21.8472
-
 [sub_resource type="CircleShape2D" id=1]
+radius = 16.3012
+
+[sub_resource type="CircleShape2D" id=2]
 radius = 31.2404
 
-[node name="nCharacterAI" type="KinematicBody2D"]
+[node name="nCharacterAI" type="KinematicBody2D" groups=[
+"characterAI",
+]]
 collision_mask = 3
 script = ExtResource( 2 )
 
@@ -21,10 +23,9 @@ script = ExtResource( 3 )
 [node name="Area2D" type="Area2D" parent="Bedamge_node"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bedamge_node/Area2D"]
-visible = false
 position = Vector2( 2.12131, -0.713587 )
 scale = Vector2( 1, 2.36 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 self_modulate = Color( 0.372549, 0.898039, 0.478431, 1 )
@@ -34,7 +35,7 @@ texture = ExtResource( 1 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="tMoveTimer" type="Timer" parent="."]
 [connection signal="body_shape_entered" from="Bedamge_node/Area2D" to="Bedamge_node" method="_on_Area2D_body_shape_entered"]

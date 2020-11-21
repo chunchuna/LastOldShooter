@@ -43,10 +43,14 @@ position = Vector2( 805.209, 112.107 )
 [node name="test-man" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 685.097, 112.107 )
 
-[node name="nCharacterAI" parent="YSort" groups=[
-"characterAI",
-] instance=ExtResource( 8 )]
+[node name="nCharacterAI" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 670.159, 252.159 )
+
+[node name="nCharacterAI2" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 529.159, 197.159 )
+
+[node name="nCharacterAI3" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 883.159, 270.159 )
 
 [node name="Box" type="Node2D" parent="."]
 

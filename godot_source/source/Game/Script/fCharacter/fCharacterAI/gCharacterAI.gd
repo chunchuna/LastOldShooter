@@ -22,8 +22,9 @@ var randomMoveTimeCutValueRange={     # 随机移动间隔范围
 }
 
 var hp =5000
-
+var homePosition   # 初始位置
 func _ready():
+	homePosition=position
 	iniAImove()
 	
 
