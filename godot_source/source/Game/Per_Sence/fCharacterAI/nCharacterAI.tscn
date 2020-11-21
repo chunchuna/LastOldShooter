@@ -21,6 +21,7 @@ scale = Vector2( 1, 0.990898 )
 script = ExtResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="Bedamge_node"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bedamge_node/Area2D"]
 position = Vector2( 2.12131, -0.713587 )

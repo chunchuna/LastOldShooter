@@ -42,7 +42,11 @@ func _physics_process(delta):
 		allowMove=true
 	else:
 		allowMove=false    
-
+	
+	if stateAi =="attck":
+		stateAIattack()
+		
+		pass	
 
 func iniAImove():
 	# 初始化移动行为
