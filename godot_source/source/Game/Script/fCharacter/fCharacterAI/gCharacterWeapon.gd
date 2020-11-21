@@ -7,6 +7,10 @@ var playerInRange
 onready var sprite =$Sprite
 onready var player =get_tree().get_root().find_node("player",true,false)
 
+#data
+
+var isAimPlayer =false
+
 func _process(delta):
 	
 
@@ -25,8 +29,10 @@ func _ready():
 
 
 func aimPlayer ():
-	#瞄准玩家
+    #瞄准玩家
+	isAimPlayer=true	
 	sprite.look_at(player.position)
+	
 	if player.position<get_parent().global_position:
 		sprite.flip_v=true
 	else:
