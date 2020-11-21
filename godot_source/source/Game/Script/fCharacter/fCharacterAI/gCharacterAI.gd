@@ -77,8 +77,6 @@ func stateAImove():
 	moveVec=moveVec.normalized()*aiMoveSpeed     
 
 
-
-
 	bug.log("character",moveType,false)
 	
 	
