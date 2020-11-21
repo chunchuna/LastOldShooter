@@ -15,7 +15,7 @@ var moveVec=Vector2()
 var allowMove=true  #是否允许移动
 var moveTimecut = 0.5 # 移动间隔
 
-var hp =500
+var hp =5000
 
 func _ready():
 	iniAImove()
@@ -98,4 +98,8 @@ func _on_Timer_timeout():
 func contactGetHurt(dmg):
 	#收到伤害
 	hp-=dmg
-	bug.log("character","currenthp"+hp,false)
+	bug.log("character","currenthp"+str(hp),false)
+	if hp<=0:
+		hp=0
+
+	
