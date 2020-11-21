@@ -12,10 +12,10 @@
 position = Vector2( 0.840881, 0.840942 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -2943.45
-margin_top = -1267.95
-margin_right = 3266.55
-margin_bottom = 3146.05
+margin_left = -3012.31
+margin_top = -1137.64
+margin_right = 3197.69
+margin_bottom = 3276.36
 color = Color( 0.239216, 0.227451, 0.227451, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -34,7 +34,7 @@ editor_draw_screen = false
 position = Vector2( -6.10352e-05, 0 )
 
 [node name="player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 424.26, 349.385 )
+position = Vector2( 442.271, 392.823 )
 
 [node name="test-man2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 805.209, 112.107 )
