@@ -34,7 +34,7 @@ editor_draw_screen = false
 position = Vector2( -6.10352e-05, 0 )
 
 [node name="player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 423.543, 380.306 )
+position = Vector2( 424.26, 349.385 )
 
 [node name="test-man2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 805.209, 112.107 )
