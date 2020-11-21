@@ -18,16 +18,14 @@ extents = Vector2( 223.613, 228.179 )
 [node name="nCharacterAI" type="KinematicBody2D" groups=[
 "characterAI",
 ]]
-position = Vector2( 1.49832, -23.2238 )
+position = Vector2( 0, -2 )
+z_index = 1
 collision_mask = 3
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 self_modulate = Color( 0.372549, 0.898039, 0.478431, 1 )
-position = Vector2( 0.594635, -3.56766 )
+position = Vector2( -0.154511, -30.066 )
 scale = Vector2( 0.286476, 0.286476 )
 texture = ExtResource( 1 )
 
@@ -36,6 +34,7 @@ visible = false
 shape = SubResource( 2 )
 
 [node name="Bedamge_node" type="Node2D" parent="."]
+position = Vector2( 0, 1.19209e-07 )
 scale = Vector2( 1, 0.990898 )
 script = ExtResource( 3 )
 
@@ -48,6 +47,7 @@ scale = Vector2( 1, 2.36 )
 shape = SubResource( 1 )
 
 [node name="nCharacterWeapon" type="Node2D" parent="."]
+position = Vector2( 0.667419, -29.6663 )
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="nCharacterWeapon"]
@@ -56,6 +56,7 @@ scale = Vector2( 0.223605, 0.223605 )
 texture = ExtResource( 4 )
 
 [node name="nCharacterUI" type="Node2D" parent="."]
+position = Vector2( 0, -17 )
 z_index = 5
 
 [node name="Control" type="Control" parent="nCharacterUI"]
@@ -75,9 +76,13 @@ margin_bottom = 66.695
 bbcode_enabled = true
 bbcode_text = "[center]characterAI"
 text = "characterAI"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="nCharacterArea2d" type="Area2D" parent="."]
 visible = false
+z_index = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="nCharacterArea2d"]
 shape = SubResource( 3 )
