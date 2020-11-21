@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game/Per_Sence/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Per_Sence/testBox.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Game/Per_Sence/modSystem/modSystem.tscn" type="PackedScene" id=5]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/Per_Sence/House/House.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/Per_Sence/fCharacterAI/nCharacterAI.tscn" type="PackedScene" id=8]
 
 [node name="Sence" type="Node2D"]
 position = Vector2( 0.840881, 0.840942 )
@@ -41,6 +42,9 @@ position = Vector2( 805.209, 112.107 )
 
 [node name="test-man" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 685.097, 112.107 )
+
+[node name="nCharacterAI" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 670.159, 252.159 )
 
 [node name="Box" type="Node2D" parent="."]
 
