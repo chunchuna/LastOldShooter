@@ -49,7 +49,11 @@ position = Vector2( 0.0348425, -15.4964 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/MoveBodyShake = SubResource( 2 )
 
-[node name="Control" type="Control" parent="."]
+[node name="uPayer" type="Node2D" parent="."]
+position = Vector2( 3.57628e-07, 7.15256e-07 )
+z_index = 10
+
+[node name="Control" type="Control" parent="uPayer"]
 margin_left = -34.5142
 margin_top = -113.511
 margin_right = 3.48591
@@ -59,7 +63,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+[node name="RichTextLabel" type="RichTextLabel" parent="uPayer/Control"]
 margin_right = 80.0
 margin_bottom = 17.0
 rect_scale = Vector2( 0.963992, 0.927003 )

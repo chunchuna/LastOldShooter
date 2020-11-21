@@ -22,7 +22,6 @@ onready var animation =$AnimationPlayer
 
 func _ready():
 	doorButton.visible=false
-	animation.play("HouseMask")
 	pass
 
 
