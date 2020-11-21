@@ -4,9 +4,12 @@ extends Node
 
 func log(ins,text,error):
 	
+
+	var logFormat =str(ins+"("+str(text)+")")
+	
 	if error:
-		print("error>>>>>>>>>>>>>>>\n"+str(text))
+		print("error>>>>>>>>>>>>>>>\n"+logFormat)
 	else:	
-		print("log:"+str(ins+"("+str(text)+")"))
+		print(logFormat)
 
 	pass
