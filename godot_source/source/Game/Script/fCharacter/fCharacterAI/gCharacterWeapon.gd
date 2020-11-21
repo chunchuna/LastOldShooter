@@ -29,7 +29,7 @@ func _ready():
 
 
 func aimPlayer ():
-    #瞄准玩家
+	#瞄准玩家
 	isAimPlayer=true	
 	sprite.look_at(player.position)
 	

@@ -13,13 +13,17 @@ radius = 31.2404
 radius = 16.3012
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 97.7298, 86.5133 )
+extents = Vector2( 223.613, 228.179 )
 
 [node name="nCharacterAI" type="KinematicBody2D" groups=[
 "characterAI",
 ]]
+position = Vector2( 1.49832, -23.2238 )
 collision_mask = 3
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 self_modulate = Color( 0.372549, 0.898039, 0.478431, 1 )
@@ -50,6 +54,27 @@ script = ExtResource( 5 )
 position = Vector2( 12.8514, 2.99658 )
 scale = Vector2( 0.223605, 0.223605 )
 texture = ExtResource( 4 )
+
+[node name="nCharacterUI" type="Node2D" parent="."]
+z_index = 5
+
+[node name="Control" type="Control" parent="nCharacterUI"]
+margin_left = -59.7187
+margin_top = -110.736
+margin_right = 86.2813
+margin_bottom = -46.7356
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nNameLable" type="RichTextLabel" parent="nCharacterUI/Control"]
+margin_left = 14.2339
+margin_top = 48.695
+margin_right = 105.234
+margin_bottom = 66.695
+bbcode_enabled = true
+bbcode_text = "[center]characterAI"
+text = "characterAI"
 
 [node name="nCharacterArea2d" type="Area2D" parent="."]
 visible = false
