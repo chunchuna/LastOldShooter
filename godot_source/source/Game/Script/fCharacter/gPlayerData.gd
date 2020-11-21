@@ -2,6 +2,7 @@ extends Node2D
 # player data 
 
 onready var _name ="test"
+onready var bagTarget=false #背包触发器
 # node 
 onready var uNameLable
 
