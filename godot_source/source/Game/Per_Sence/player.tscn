@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game/Script/fCharacter/gPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Game/Art/Player/Player.png" type="Texture" id=2]
 [ext_resource path="res://Game/Per_Sence/weaponNode.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/Font/cn_.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Game/Script/fCharacter/gPlayerData.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.30154
@@ -33,6 +34,7 @@ collision_mask = 3
 script = ExtResource( 1 )
 
 [node name="nPlayerData" type="Node2D" parent="."]
+script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 7.4406, -23.4101 )
@@ -56,10 +58,10 @@ position = Vector2( 3.57628e-07, 7.15256e-07 )
 z_index = 10
 
 [node name="Control" type="Control" parent="uPayer"]
-margin_left = -34.5142
-margin_top = -112.62
-margin_right = 3.48591
-margin_bottom = -100.62
+margin_left = -21.815
+margin_top = -80.0783
+margin_right = 16.1851
+margin_bottom = -68.0783
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false

@@ -15,7 +15,7 @@ onready var weaponString ={
 		"bullet_tscn":"res://Game/Per_Sence/bullet.tscn",
 		"bulletMax":90,
 		"bulletSpeed":1200,
-		"damage":80,
+		"damage":300,
 		"shootCut":0.6,
 		"realoading_system":false,
 		"shake_":5.0,
@@ -48,7 +48,7 @@ onready var weaponString ={
 		"shootCut":0.0001,
 		"realoading_system":false,
 		"shake_":6.0,
-		"recoil":10,
+		"recoil":300,
 		"AutoFire":true,
 		
 	}

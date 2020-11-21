@@ -1,8 +1,13 @@
 extends KinematicBody2D
 onready var spr =$Sprite
 onready var animation =$AnimationPlayer
+onready var uNameLable =$uPayer/Control/RichTextLabel  
 var speed =200
 var vec=Vector2()
+
+func _ready():
+	pass
+
 
 func get_input():
 	vec=Vector2.ZERO
