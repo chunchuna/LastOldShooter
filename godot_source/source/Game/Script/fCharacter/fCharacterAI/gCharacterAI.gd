@@ -14,6 +14,12 @@ var moveVec=Vector2()
 
 var allowMove=true  #是否允许移动
 var moveTimecut = 0.5 # 移动间隔
+var randomMoveTimeCut=false # 随机移动间隔
+
+var randomMoveTimeCutValueRange={     # 随机移动间隔范围
+	"min":0,
+	"max":0,
+}
 
 var hp =5000
 
@@ -79,7 +85,7 @@ func stateAIfloowPlayer():
 	pass
 	
 func stateAIloot():
-	# 拾取道具
+	# 拾取道具 
 	pass
 	
  
