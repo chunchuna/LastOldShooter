@@ -7,7 +7,7 @@ onready var shppe:CollisionShape2D =$shape
 onready var movetimer:Timer =$tMoveTimer
 
 # data 
-var aiMoveSpeed =10
+var aiMoveSpeed =80
 var statePoint
 var stateAi = "move"
 var moveVec=Vector2()
@@ -93,3 +93,9 @@ func _on_Timer_timeout():
 	if allowMove:
 		stateAImove()
 	
+
+#node
+func contactGetHurt(dmg):
+	#收到伤害
+	hp-=dmg
+	bug.log("character","currenthp"+hp,false)

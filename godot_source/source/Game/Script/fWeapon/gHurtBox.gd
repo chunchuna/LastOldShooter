@@ -20,6 +20,9 @@ func _on_Area2D_body_shape_entered(body_id, body, body_shape, area_shape):
 			dmg_.global_position=self.global_position
 			dmg_.set_dmg(bullet_dmg)
 			body.get_parent().queue_free()	
+			# 执行伤害
+			# if get_parent().has("contactGetHurt"):
+			# 	get_parent().contactGetHurt(bullet_dmg)
 
 			pass
 	pass
