@@ -12,14 +12,14 @@ onready var mod_list={
 	
 }
 func _ready():
-	mod_ini()
+	modIni()
 	load_mods()
 	
 	pass
 	
 	
 	
-func mod_ini():
+func modIni():
 	# mod 系统初始化
 	var directory = Directory.new();
 	var doFileExists = directory.dir_exists(mods_path)	
