@@ -1,6 +1,6 @@
 extends Node2D
 #modSystem.gd
-var mods_path ="E:/AGODOT引擎/LOS项目/Game/mods"
+var mods_path ="C:/los_mod"
 var weapon_data =WeaponData # 武器数据 方便mod获取
 
 
