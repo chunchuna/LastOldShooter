@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game/Art/House/sHouse_vecWall.png" type="Texture" id=1]
+
+[node name="sVecWall" type="Sprite"]
+position = Vector2( 14.0158, 298.337 )
+scale = Vector2( 0.108327, 2.40425 )
+texture = ExtResource( 1 )
