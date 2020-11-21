@@ -12,10 +12,27 @@ onready var mod_list={
 	
 }
 func _ready():
+	mod_ini()
 	load_mods()
 	
 	pass
 	
+	
+	
+func mod_ini():
+	# mod 系统初始化
+	var directory = Directory.new();
+	var doFileExists = directory.dir_exists(mods_path)	
+	if doFileExists:
+		print("存在Mod文件夹")
+		pass
+	else:
+		print("不存在mod文件夹")		
+		directory.make_dir_recursive(mods_path)
+		print("已经初始化mod文件夹")
+		pass
+	pass
+		
 func normal_load_mod():
 	
 	ProjectSettings.load_resource_pack(mods_path+"mod1.pck", true)
