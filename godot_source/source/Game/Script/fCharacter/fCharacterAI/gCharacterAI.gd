@@ -112,9 +112,13 @@ func _on_Timer_timeout():
 		stateAImove()
 	
 
+
+		
+# ------------------------------------------------------------------Human Little Trick		
+
 #node
 func contactGetHurt(dmg):
-	#收到伤害
+	#受到伤害
 	hp-=dmg
 	bug.log("character","currenthp"+str(hp),false)
 	if hp<=0:

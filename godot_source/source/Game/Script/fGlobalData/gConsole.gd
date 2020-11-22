@@ -8,8 +8,8 @@ func _ready():
 	Console.add_command("weapon:change",self,"Weapon_CHANGE").set_description("更换当前装备中的武器").add_argument("weaponString",TYPE_STRING).register()
 	Console.add_command("weapon:bulletMax",self,"Weapon_BULLET_MAX").set_description("无限子弹").register()
 	Console.add_command("mod:get_mod_list",self,"mod_get_mod_list").set_description("获取mod列表").register()
-	Console.add_command("reback:characterAI",self,"rebackCharacterAI").set_description("重置所有AI玩家").register()
-	
+	Console.add_command("characterAI:reback",self,"rebackCharacterAI").set_description("重置所有AI玩家").register()
+	Console.add_command("characterAI:StopMovement",self,"stopCharacterAImove").set_description("停止AI玩家的移动").register()
 	
 	Console.connect("click_meta",self,"click_meta")
 	pass
@@ -71,6 +71,11 @@ func rebackCharacterAI():
 		characterAI.position=characterAI.homePosition
 		bug.log("console","已经初始化AI玩家",false)
 
+	pass
+
+
+func stopCharacterAImove ():
+	# 停止所有AI玩家的移动
 	pass
 
 # 点击了 meta

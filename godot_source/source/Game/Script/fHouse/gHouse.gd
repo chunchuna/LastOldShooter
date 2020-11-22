@@ -48,11 +48,6 @@ func _on_aDoorArea2d_body_shape_exited(body_id, body, body_shape, area_shape):
 	pass # Replace with function body.
 			
 
-
-
-
-
-
 func _on_bDoorButton_pressed():
 	# door button
 	
