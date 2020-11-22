@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Game",
+    "\\Game\\Script",
+    "\\Game\\Script\\fCharacter",
+    "\\Game\\Script\\fCharacter\\fCharacterAI"
+  ],
+  "SelectedNode": "\\Game\\Script\\fCharacter\\fCharacterAI\\gCharacterAI.gd",
+  "PreviewInSolutionExplorer": false
+}

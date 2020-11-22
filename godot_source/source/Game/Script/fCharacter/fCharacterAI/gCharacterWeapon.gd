@@ -41,12 +41,6 @@ func aimPlayer ():
 	
 
 
-
-
-
-
-
-
 # ---------------------------------------------------------------Area2D 范围检测
 func _on_nCharacterArea2d_body_shape_entered(body_id, body, body_shape, area_shape):
 	
@@ -61,5 +55,6 @@ func _on_nCharacterArea2d_body_shape_exited(body_id, body, body_shape, area_shap
 	if body:
 		if body.name=="player":
 			bug.log("characterWeapon","玩家离开",false)
+			isAimPlayer=false
 			playerInRange=false
 	
