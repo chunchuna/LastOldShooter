@@ -14,7 +14,8 @@ var statePoint
 var stateAi = "move"
 var moveVec=Vector2()
 
-var allowMove=true  #是否允许移动
+var allowMove=true  #移动开关	
+var stopMovement=false # 禁止移动
 var moveTimecut = 0.5 # 移动间隔
 var randomMoveTimeCut=false # 随机移动间隔
 
@@ -84,7 +85,7 @@ func stateAImove():
 	moveVec=moveVec.normalized()*aiMoveSpeed     
 
 
-	bug.log("character",moveType,false)
+	#bug.log("character",moveType,false)
 	
 	
 
@@ -108,7 +109,8 @@ func statePointDie():
 
 # ----------------------------------------------------------------计时器 
 func _on_Timer_timeout():
-	if allowMove:
+	if allowMove and !stopMovement:
+		
 		stateAImove()
 	
 

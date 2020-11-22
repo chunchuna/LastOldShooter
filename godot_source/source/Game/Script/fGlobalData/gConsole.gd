@@ -76,6 +76,16 @@ func rebackCharacterAI():
 
 func stopCharacterAImove ():
 	# 停止所有AI玩家的移动
+	
+	for characterAI in get_tree().get_nodes_in_group("characterAI"):
+		if ! characterAI.stopMovement:
+			characterAI.stopMovement=true
+			characterAI.moveVec=Vector2.ZERO
+		else:
+			characterAI.stopMovement=false	
+
+	bug.log("console","已经转换AI的移动状态",false)	
+	
 	pass
 
 # 点击了 meta
