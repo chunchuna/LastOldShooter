@@ -4,7 +4,8 @@
 [ext_resource path="res://Game/Script/fCharacter/gTestMan.gd" type="Script" id=2]
 [ext_resource path="res://Game/Script/fWeapon/gHurtBox.gd" type="Script" id=3]
 [ext_resource path="res://Game/Script/fCharacter/gContact.gd" type="Script" id=4]
-[ext_resource path="res://Game/Per_Sence/NameLable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/fTSCN/NameLable.tscn" type="PackedScene" id=5]
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 23.4046

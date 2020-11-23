@@ -7,10 +7,12 @@ extends Node2D
 
 export(bool) var doorLock=true
 onready var doorStaticshape =$nDoor/sDoorstatic/shape
-onready var doorAreaShape =$aHouseArea2d/CollisionShape2D
+onready var doorAreaShape =$aHouseArea2d/shape
 onready var doorButton =$UI/ui/bDoorButton
 onready var doorSprite =$nDoor/sDoorSprite
 onready var doorState="close"  # door state
+
+
 
 # House 
 onready var HouseMask =$cHouseMask

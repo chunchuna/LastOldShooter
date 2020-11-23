@@ -6,14 +6,14 @@
 [ext_resource path="res://Game/Art/weaponTexture/M4A1.png" type="Texture" id=4]
 [ext_resource path="res://Game/Script/fCharacter/fCharacterAI/gCharacterWeapon.gd" type="Script" id=5]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 31.2404
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=2]
 radius = 16.3012
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 223.613, 228.179 )
+extents = Vector2( 454.025, 392.754 )
 
 [node name="nCharacterAI" type="KinematicBody2D" groups=[
 "characterAI",
@@ -31,7 +31,7 @@ texture = ExtResource( 1 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Bedamge_node" type="Node2D" parent="."]
 position = Vector2( 0, 1.19209e-07 )
@@ -42,9 +42,10 @@ script = ExtResource( 3 )
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bedamge_node/Area2D"]
+visible = false
 position = Vector2( 2.12131, -0.713587 )
 scale = Vector2( 1, 2.36 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="nCharacterWeapon" type="Node2D" parent="."]
 position = Vector2( 0.667419, -29.6663 )
@@ -81,14 +82,19 @@ __meta__ = {
 }
 
 [node name="nCharacterArea2d" type="Area2D" parent="."]
-visible = false
 z_index = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="nCharacterArea2d"]
+visible = false
 shape = SubResource( 3 )
 
-[node name="tMoveTimer" type="Timer" parent="."]
+[node name="tNormalMoveTimer" type="Timer" parent="."]
+
+[node name="tMoveTypeChangeTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
 [connection signal="body_shape_entered" from="Bedamge_node/Area2D" to="Bedamge_node" method="_on_Area2D_body_shape_entered"]
 [connection signal="body_shape_entered" from="nCharacterArea2d" to="nCharacterWeapon" method="_on_nCharacterArea2d_body_shape_entered"]
 [connection signal="body_shape_exited" from="nCharacterArea2d" to="nCharacterWeapon" method="_on_nCharacterArea2d_body_shape_exited"]
-[connection signal="timeout" from="tMoveTimer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="tNormalMoveTimer" to="." method="_on_tNormalMoveTimer_timeout"]
+[connection signal="timeout" from="tMoveTypeChangeTimer" to="." method="_on_tMoveTypeChangeTimer_timeout"]

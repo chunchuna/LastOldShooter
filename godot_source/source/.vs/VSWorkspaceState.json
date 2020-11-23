@@ -4,8 +4,9 @@
     "\\Game",
     "\\Game\\Script",
     "\\Game\\Script\\fCharacter",
-    "\\Game\\Script\\fCharacter\\fCharacterAI"
+    "\\Game\\Script\\fCharacter\\fCharacterAI",
+    "\\Game\\Script\\fHouse"
   ],
-  "SelectedNode": "\\Game\\Script\\fCharacter\\fCharacterAI\\gCharacterAI.gd",
+  "SelectedNode": "\\Game\\Script\\fHouse\\gHouse.gd",
   "PreviewInSolutionExplorer": false
 }

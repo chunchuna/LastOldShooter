@@ -3,6 +3,7 @@ extends Node
 var console_active =false
 onready var console_ui =get_tree().get_root().find_node("Console",true,false).get_node("ConsoleBox")
 onready var weaponNode =get_tree().get_root().find_node("weaponNode",true,false)
+
 func _ready():
 	#print(console_ui)
 	Console.add_command("weapon:change",self,"Weapon_CHANGE").set_description("更换当前装备中的武器").add_argument("weaponString",TYPE_STRING).register()
@@ -18,6 +19,7 @@ func _process(delta):
 
 	console_active=console_ui.visible
 	pass
+
 # func --------------------------
 
 # weapon @@ 
@@ -70,6 +72,7 @@ func rebackCharacterAI():
 	for characterAI in get_tree().get_nodes_in_group("characterAI"):
 		characterAI.position=characterAI.homePosition
 		bug.log("console","已经初始化AI玩家",false)
+		
 
 	pass
 

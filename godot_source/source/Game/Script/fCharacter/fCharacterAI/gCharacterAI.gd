@@ -4,27 +4,32 @@ extends KinematicBody2D
 #node 
 onready var sprite:Sprite =$Sprite
 onready var shppe:CollisionShape2D =$shape
-onready var movetimer:Timer =$tMoveTimer
+onready var Normalmovetimer:Timer =$tNormalMoveTimer
+onready var moveTypeTimer:Timer=$tMoveTypeChangeTimer
 onready var targetArea2d =$nCharacterArea2d/CollisionShape2D
 onready var characterWeaponNode =$nCharacterWeapon
 
-# data 
-var aiMoveSpeed =80
-var statePoint
-var stateAi = "move"
-var moveVec=Vector2()
 
+# data 
+var aiMoveSpeed =200
+var statePoint
+var stateAi=["move","attack"] 
+var moveVec=Vector2()
+# 移动
 var allowMove=true  #移动开关	
 var stopMovement=false # 禁止移动
-var moveTimecut = 0.5 # 移动间隔
-var randomMoveTimeCut=false # 随机移动间隔
+var moveTimecut = 0.1 # 移动间隔
+var randomMoveTimeCut=false# 随机移动间隔
+# Huam 模式
+var huamMoveType =true #模仿人类移动模式
+var getInfastMoveType=false #进入快速移动模式
 
 
 var playerinRange=false # 玩家在范围
 
 var randomMoveTimeCutValueRange={     # 随机移动间隔范围
 	"min":0,
-	"max":0,
+	"max":3,
 }
 
 var hp =5000
@@ -48,20 +53,20 @@ func _physics_process(delta):
 	move_and_slide(moveVec)
 	
 	# 状态机
-	if stateAi=="move":
+	if stateAi.has("move"):
 		allowMove=true
 	else:
 		allowMove=false    
 	
-	if stateAi =="attck":
+	if stateAi.has("attck"):
 		stateAIattack()
 
 		pass	
 
 func iniAImove():
 	# 初始化移动行为
-	movetimer.wait_time=moveTimecut
-	movetimer.start()
+	Normalmovetimer.wait_time=moveTimecut
+	Normalmovetimer.start()
 	
 
 # ------------------------------------------------------------------动作状态
@@ -107,11 +112,47 @@ func stateAIloot():
 func statePointDie():
    pass     
 
-# ----------------------------------------------------------------计时器 
-func _on_Timer_timeout():
+# ---------------------------------------------------------------- 移动计时器 
+
+func _on_tNormalMoveTimer_timeout():
+	# MoveCutTimer
+
 	if allowMove and !stopMovement:
+		# MoveType
 		
-		stateAImove()
+		if !huamMoveType:
+			if !randomMoveTimeCut:
+				# def move type
+				stateAImove()
+			else:
+				# random move type
+				Normalmovetimer.wait_time=int(rand_range(randomMoveTimeCutValueRange.min,randomMoveTimeCutValueRange.max))
+				stateAImove()
+
+
+		if huamMoveType:
+			# 模仿人类玩家移动模式
+			if getInfastMoveType:
+				Normalmovetimer.wait_time=0.1
+				stateAImove()
+			else:
+				Normalmovetimer.wait_time=rand_range(0.7,0.8)
+				stateAImove()	
+		
+	pass # Replace with function body.
+
+
+func _on_tMoveTypeChangeTimer_timeout():
+		
+		# move type change timer
+		moveTypeTimer.wait_time=rand_range(0.5,2.5)
+
+		if getInfastMoveType:
+			getInfastMoveType=false
+		else:
+			getInfastMoveType=true	
+			
+		pass # Replace with function body.
 	
 
 
@@ -127,3 +168,8 @@ func contactGetHurt(dmg):
 		hp=0
 
 	
+
+
+
+
+

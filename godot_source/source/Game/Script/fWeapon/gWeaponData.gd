@@ -12,7 +12,7 @@ onready var weaponString ={
 	"gun":{
 		"id:":0,
 		"texture":"res://Game/Art/weaponTexture/gun.png",
-		"bullet_tscn":"res://Game/Per_Sence/bullet.tscn",
+		"bullet_tscn":"res://Game/fTSCN/bullet.tscn",
 		"bulletMax":90,
 		"bulletSpeed":1200,
 		"damage":300,
@@ -26,7 +26,7 @@ onready var weaponString ={
 	"M4A1":{
 		"id:":1,
 		"texture":"res://Game/Art/weaponTexture/M4A1.png",
-		"bullet_tscn":"res://Game/Per_Sence/bullet.tscn",
+		"bullet_tscn":"res://Game/fTSCN/bullet.tscn",
 		"bulletMax":150,
 		"bulletSpeed":1500,
 		"damage":120,
@@ -41,7 +41,7 @@ onready var weaponString ={
 	"FireGun":{
 		"id:":2,
 		"texture":"res://Game/Art/weaponTexture/FireGun.png",
-		"bullet_tscn":"res://Game/Per_Sence/FireBullet.tscn",
+		"bullet_tscn":"res://Game/fTSCN/FireBullet.tscn",
 		"bulletMax":900,
 		"bulletSpeed":150,
 		"damage":30,

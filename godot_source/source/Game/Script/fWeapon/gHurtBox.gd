@@ -4,7 +4,7 @@ extends Node2D
 var bullet_dmg 
 var bullet_type 
 var weapon_name
-var dmg_text =preload("res://Game/Per_Sence/dmg_text.tscn")
+var dmg_text =preload("res://Game/fTSCN/dmg_text.tscn")
 var targe=false
 onready var player =get_tree().get_root().find_node("player",true,false)
 func _on_Area2D_body_shape_entered(body_id, body, body_shape, area_shape):
