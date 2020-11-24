@@ -1,12 +1,18 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game/fTSCN/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Script/fNavigatationFindPath/Navigation2D.gd" type="Script" id=2]
 [ext_resource path="res://Game/fTSCN/SenceCamera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/fTSCN/fInterRactionLayer/nTestNpc.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game/fTSCN/fModSystem/modSystem.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Sence/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/fTSCN/fHouse/House.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Game/fTSCN/fCharacterAI/nCharacterAI.tscn" type="PackedScene" id=8]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 212.904, -652.625, 199.45, -58.9518, -66.2733, -57.27, -69.6369, -647.579 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -69.6369, -647.579, -66.2733, -57.27, 199.45, -58.9518, 212.904, -652.625 ) ]
 
 [node name="Sence" type="Node2D"]
 position = Vector2( 0.840881, 0.840942 )
@@ -66,3 +72,24 @@ doorLock = false
 [node name="House2" parent="." instance=ExtResource( 7 )]
 position = Vector2( -67.731, -660.932 )
 doorLock = false
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+position = Vector2( -11.7726, 0 )
+navpoly = SubResource( 1 )
+
+[node name="NavigationPolygonInstance3" type="NavigationPolygonInstance" parent="Navigation2D"]
+position = Vector2( -634.036, 0 )
+navpoly = SubResource( 1 )
+
+[node name="NavigationPolygonInstance4" type="NavigationPolygonInstance" parent="Navigation2D"]
+position = Vector2( -302.723, -5.04538 )
+navpoly = SubResource( 1 )
+
+[node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="Navigation2D"]
+position = Vector2( 329.631, -5.04535 )
+navpoly = SubResource( 1 )
+
+[node name="Line2D" type="Line2D" parent="."]

@@ -9,6 +9,8 @@ onready var moveTypeTimer:Timer=$tMoveTypeChangeTimer
 onready var targetArea2d =$nCharacterArea2d/CollisionShape2D
 onready var characterWeaponNode =$nCharacterWeapon
 
+onready var findPathNode =get_tree().get_root().find_node("Navigation2D",true,false)
+onready var player =get_tree().get_root().find_node("player",true,false)
 
 # data 
 var aiMoveSpeed =200
@@ -23,6 +25,7 @@ var randomMoveTimeCut=false# 随机移动间隔
 # Huam 模式
 var huamMoveType =true #模仿人类移动模式
 var getInfastMoveType=false #进入快速移动模式
+
 
 
 var playerinRange=false # 玩家在范围
@@ -63,6 +66,10 @@ func _physics_process(delta):
 
 		pass	
 
+	if stateAi.has("follow") and !stateAi.has("move"):
+		stateAIfloowPlayer()
+
+
 func iniAImove():
 	# 初始化移动行为
 	Normalmovetimer.wait_time=moveTimecut
@@ -99,7 +106,17 @@ func stateAIattack():
 	pass  
 	
 func stateAIfloowPlayer():
-	# 跟随玩家
+	
+
+	var followDistance = 300  # 跟随极限距离
+	# 跟随玩家 自动寻路
+ 
+	var dir = global_position.direction_to(player.global_position)*aiMoveSpeed
+	if global_position.distance_to(player.global_position)>followDistance:
+		dir =move_and_slide(dir)
+ 
+
+	
 	pass
 	
 func stateAIloot():
@@ -127,7 +144,7 @@ func _on_tNormalMoveTimer_timeout():
 			else:
 				# random move type
 				Normalmovetimer.wait_time=int(rand_range(randomMoveTimeCutValueRange.min,randomMoveTimeCutValueRange.max))
-				
+
 
 				
 				stateAImove()
