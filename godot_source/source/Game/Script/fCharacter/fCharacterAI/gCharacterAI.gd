@@ -127,6 +127,9 @@ func _on_tNormalMoveTimer_timeout():
 			else:
 				# random move type
 				Normalmovetimer.wait_time=int(rand_range(randomMoveTimeCutValueRange.min,randomMoveTimeCutValueRange.max))
+				
+
+				
 				stateAImove()
 
 

@@ -80,7 +80,7 @@ func LoadWeaponData():
 		recoil=dataString[weapon_name].recoil
 		# 子弹
 		if dataString[weapon_name].bullet_tscn!=null:
-			bullet_tscn=load(dataString[weapon_name].bullet_tscn)
+			bullet_tscn=load(dataString[weapon_name].bullet_tscn) # 子弹地址
 		# 自动开火	
 		autoFire=dataString[weapon_name].AutoFire
 		
@@ -141,7 +141,7 @@ func attack ():
 			# ScreenShake
 			camera.toShake=true  
 			# 数据释放
-			var thisBullet =bullet_tscn.instance()
+			var thisBullet =bullet_tscn.instance()  # 生成子弹
 			thisBullet.flyDir=global_rotation
 			thisBullet.flySpeed=bulletSpeed
 			thisBullet.recoil=recoil
