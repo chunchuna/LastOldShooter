@@ -64,7 +64,7 @@ func _physics_process(delta):
 	
 	move_and_slide(moveVec)
 	
-	# 状态机
+	# STATE
 	if stateAi.has("move"):
 		allowMove=true
 	else:
@@ -92,7 +92,7 @@ func iniDebug():
 		lin2dTimer.start(true)
 	pass	
 
-# ------------------------------------------------------------------动作状态
+# ------------------------------------------------------------------ACTION
 func stateAImove():
 	# 移动
 	moveVec=Vector2.ZERO
@@ -121,11 +121,12 @@ func stateAIattack():
 	
 func stateAIfloowPlayer():
 	
+	# follow player
 
-	var followDistance = 230 # 跟随极限距离
-	# 跟随玩家 自动寻路
- 
-	var dir = global_position.direction_to(player.global_position)*aiMoveSpeed
+	var followDistance = 120 # limit distance
+	var ramdonOffset =Vector2( rand_range(-300,300),rand_range(-300,300))
+
+	var dir = global_position.direction_to(player.global_position+ramdonOffset)*aiMoveSpeed
 	if global_position.distance_to(player.global_position)>followDistance:
 		dir =move_and_slide(dir)
 	
@@ -142,12 +143,13 @@ func stateAIloot():
 	pass
 	
  
-# ---------------------------------------------------------------指向状态    
+# --------------------------------------------------------------- POINT STATE
 
 func statePointDie():
    pass     
 
-# ---------------------------------------------------------------- 移动计时器 
+# ---------------------------------------------------------------- MOVE TIMER
+
 
 func _on_tNormalMoveTimer_timeout():
 	# MoveCutTimer
@@ -197,20 +199,20 @@ func _on_tMoveTypeChangeTimer_timeout():
 
 func _on_tLine2dTimer_timeout():
 			
-	#lin2d 计时器
+	#lin2d timer
 	
 	if stateAi.has("follow"):
 
-		# 画出连接线
+		# draw line -----
 
 		line2d.add_point(global_position-player.global_position)
 		line2d.add_point(player.global_position-global_position)
 		yield(get_tree().create_timer(0.5),"timeout")
 		line2d.clear_points()
 
-		# 画出方框
+		# drwa box -----
 
-		
+
 	pass # Replace with function body.
 		
 		
@@ -218,7 +220,7 @@ func _on_tLine2dTimer_timeout():
 
 #node
 func contactGetHurt(dmg):
-	#受到伤害
+	#GET HURT
 	hp-=dmg
 	bug.log("character","currenthp"+str(hp),false)
 	if hp<=0:
