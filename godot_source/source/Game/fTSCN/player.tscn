@@ -28,7 +28,6 @@ tracks/0/keys = {
 font_data = ExtResource( 4 )
 
 [node name="player" type="KinematicBody2D"]
-position = Vector2( -0.102044, -1.03616 )
 z_index = 1
 collision_mask = 3
 script = ExtResource( 1 )

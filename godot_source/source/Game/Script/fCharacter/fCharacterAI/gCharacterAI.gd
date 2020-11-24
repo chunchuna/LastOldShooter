@@ -12,10 +12,16 @@ onready var characterWeaponNode =$nCharacterWeapon
 onready var findPathNode =get_tree().get_root().find_node("Navigation2D",true,false)
 onready var player =get_tree().get_root().find_node("player",true,false)
 
+onready var line2d =$Line2D
+onready var lin2dTimer =$tLine2dTimer
+
+#dabug
+var debug =true
+
 # data 
 var aiMoveSpeed =200
 var statePoint
-var stateAi=["move","attack"] 
+var stateAi=["follow","attack"] 
 var moveVec=Vector2()
 # 移动
 var allowMove=true  #移动开关	
@@ -25,6 +31,8 @@ var randomMoveTimeCut=false# 随机移动间隔
 # Huam 模式
 var huamMoveType =true #模仿人类移动模式
 var getInfastMoveType=false #进入快速移动模式
+
+var attackDesireValue = 0  #进攻欲望
 
 
 
@@ -43,6 +51,7 @@ var homePosition   # 初始位置
 func _ready():
 	homePosition=position
 	iniAImove()
+	iniDebug()
 	
 
 func _process(delta):
@@ -70,11 +79,18 @@ func _physics_process(delta):
 		stateAIfloowPlayer()
 
 
+func _draw():
+	#draw_line(position,player.position,Color(0, 0, 1),0.5,false)
+	pass		
 func iniAImove():
 	# 初始化移动行为
 	Normalmovetimer.wait_time=moveTimecut
 	Normalmovetimer.start()
 	
+func iniDebug():
+	if debug:
+		lin2dTimer.start(true)
+	pass	
 
 # ------------------------------------------------------------------动作状态
 func stateAImove():
@@ -99,8 +115,6 @@ func stateAImove():
 
 	#bug.log("character",moveType,false)
 	
-	
-
 func stateAIattack():
 	# 攻击
 	pass  
@@ -108,12 +122,16 @@ func stateAIattack():
 func stateAIfloowPlayer():
 	
 
-	var followDistance = 300  # 跟随极限距离
+	var followDistance = 230 # 跟随极限距离
 	# 跟随玩家 自动寻路
  
 	var dir = global_position.direction_to(player.global_position)*aiMoveSpeed
 	if global_position.distance_to(player.global_position)>followDistance:
 		dir =move_and_slide(dir)
+	
+	
+	
+	
  
 
 	
@@ -176,6 +194,25 @@ func _on_tMoveTypeChangeTimer_timeout():
 	
 
 
+
+func _on_tLine2dTimer_timeout():
+			
+	#lin2d 计时器
+	
+	if stateAi.has("follow"):
+
+		# 画出连接线
+
+		line2d.add_point(global_position-player.global_position)
+		line2d.add_point(player.global_position-global_position)
+		yield(get_tree().create_timer(0.5),"timeout")
+		line2d.clear_points()
+
+		# 画出方框
+
+		
+	pass # Replace with function body.
+		
 		
 # ------------------------------------------------------------------Human Little Trick		
 
