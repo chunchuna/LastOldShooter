@@ -86,7 +86,7 @@ func doorStateController():
 
 	
 
-func mCheckDoorpromission ():
+func mCheckDoorpromission ()->bool:
 	# 检查门锁开放权限
 	if  GlobalVar.mainBag.has("key"):
 		return true

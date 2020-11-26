@@ -7,7 +7,7 @@
 [ext_resource path="res://Game/fTSCN/fModSystem/modSystem.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Sence/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/fTSCN/fHouse/House.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Game/fTSCN/fCharacterAI/nCharacterAI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/fTSCN/fHouse/nHouseCloset.tscn" type="PackedScene" id=14]
 
 [node name="Sence" type="Node2D"]
 position = Vector2( 0.840881, 0.840942 )
@@ -35,7 +35,7 @@ editor_draw_screen = false
 position = Vector2( -6.10352e-05, 0 )
 
 [node name="player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 459.108, 308.638 )
+position = Vector2( 263.858, 473.728 )
 
 [node name="test-man2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 805.209, 112.107 )
@@ -43,27 +43,20 @@ position = Vector2( 805.209, 112.107 )
 [node name="test-man" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 685.097, 112.107 )
 
-[node name="nCharacterAI" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 682.552, 186.423 )
-
-[node name="nCharacterAI2" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 876.434, 270.12 )
-
-[node name="nCharacterAI4" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 827.698, 376.066 )
-
-[node name="nCharacterAI3" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 407.092, 135.568 )
+[node name="nHouseCloset" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( -130.392, 202.21 )
+z_index = 1
 
 [node name="Box" type="Node2D" parent="."]
 
-[node name="House" parent="." instance=ExtResource( 7 )]
-position = Vector2( -689.985, -662.346 )
-doorLock = false
-
-[node name="House2" parent="." instance=ExtResource( 7 )]
-position = Vector2( -67.731, -660.932 )
-doorLock = false
-
 [node name="Navigation2D" type="Navigation2D" parent="."]
 script = ExtResource( 2 )
+
+[node name="gHouse" type="Node2D" parent="."]
+position = Vector2( 4.76215, -3.1748 )
+
+[node name="TestHouse1" parent="gHouse" instance=ExtResource( 7 )]
+position = Vector2( -604.338, 28.1552 )
+doorLock = false
+
+[editable path="gHouse/TestHouse1"]

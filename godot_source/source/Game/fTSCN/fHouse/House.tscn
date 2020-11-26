@@ -1,22 +1,10 @@
-[gd_scene load_steps=1459 format=2]
+[gd_scene load_steps=1455 format=2]
 
 [ext_resource path="res://Game/fTSCN/fHouse/sHorWall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/fTSCN/fHouse/sVecWall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Art/House/sHouse_Floor.png" type="Texture" id=3]
 [ext_resource path="res://Game/Script/fHouse/gHouse.gd" type="Script" id=4]
 [ext_resource path="res://Game/Art/House/sHouse_door.png" type="Texture" id=5]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 125.869, 99.6326 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 265.51, 94.9424 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 18.5682, 282.394 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 126.516, 99.432 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 262, 138 )
@@ -10662,7 +10650,7 @@ WindowDialog/styles/panel = SubResource( 1451 )
 
 [sub_resource type="Animation" id=1453]
 tracks/0/type = "value"
-tracks/0/path = NodePath("cHouseMask:self_modulate")
+tracks/0/path = NodePath("cHouseMaskNode2d/cHouseMask:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -10676,72 +10664,35 @@ tracks/0/keys = {
 
 [node name="House" type="Node2D"]
 position = Vector2( -286.002, -267.103 )
-z_index = 1
 script = ExtResource( 4 )
 
 [node name="nHouseMain" type="Node2D" parent="."]
 
 [node name="sFloor" type="Sprite" parent="nHouseMain"]
-position = Vector2( 292.543, 299.672 )
+position = Vector2( 295.431, 389.536 )
 rotation = 0.000981362
-scale = Vector2( 2.33484, 2.40425 )
-z_index = -1
+scale = Vector2( 2.13889, 1.65828 )
 texture = ExtResource( 3 )
 
-[node name="sVecWall" parent="nHouseMain" instance=ExtResource( 2 )]
-position = Vector2( 14.0159, 215.714 )
-scale = Vector2( 0.108327, 1.74424 )
-
-[node name="sVecWall2" parent="nHouseMain" instance=ExtResource( 2 )]
-position = Vector2( 573.39, 217.642 )
-scale = Vector2( 0.108327, 1.74873 )
-
 [node name="sHorWall2" parent="nHouseMain" instance=ExtResource( 1 )]
-position = Vector2( 135.987, 505.329 )
-scale = Vector2( 1.08337, 0.758715 )
+position = Vector2( 124.103, 507.103 )
+scale = Vector2( 1.00418, 0.758715 )
 
 [node name="sHorWall3" parent="nHouseMain" instance=ExtResource( 1 )]
-position = Vector2( 450.042, 505.329 )
-scale = Vector2( 1.08549, 0.758715 )
-
-[node name="sVecWall5" parent="nHouseMain" instance=ExtResource( 2 )]
-position = Vector2( 450.598, 421.93 )
-scale = Vector2( 1.08747, 0.123407 )
-
-[node name="sVecWall4" parent="nHouseMain" instance=ExtResource( 2 )]
-position = Vector2( 135.524, 421.93 )
-scale = Vector2( 1.07688, 0.123407 )
+position = Vector2( 459.548, 507.103 )
+scale = Vector2( 1.007, 0.758715 )
 
 [node name="sHorWall4" parent="nHouseMain" instance=ExtResource( 1 )]
-position = Vector2( 293.586, 83.8449 )
-scale = Vector2( 2.13061, 0.673408 )
+position = Vector2( 290.291, 91.103 )
+scale = Vector2( 2.33369, 0.758715 )
+
+[node name="sVecWall" parent="nHouseMain" instance=ExtResource( 2 )]
+position = Vector2( 14.0158, 212.454 )
+scale = Vector2( 0.108327, 1.71719 )
 
 [node name="sVecWall3" parent="nHouseMain" instance=ExtResource( 2 )]
-position = Vector2( 297.435, 14.4765 )
-scale = Vector2( 2.16563, 0.123407 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 143.469, 503.063 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 295.208, 87.5521 )
-shape = SubResource( 2 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 19.082, 271.636 )
-shape = SubResource( 3 )
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 567.966, 281.738 )
-shape = SubResource( 3 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 447.165, 505.745 )
-shape = SubResource( 4 )
+position = Vector2( 574.002, 211.103 )
+scale = Vector2( 0.108327, 1.71719 )
 
 [node name="aHouseArea2d" type="Area2D" parent="."]
 visible = false
@@ -10754,8 +10705,8 @@ shape = SubResource( 5 )
 position = Vector2( 257, 485 )
 
 [node name="sDoorSprite" type="Sprite" parent="nDoor"]
-position = Vector2( 33.2045, 86.7036 )
-scale = Vector2( 0.252553, 0.252553 )
+position = Vector2( 32.4974, 77.275 )
+scale = Vector2( 0.490141, 0.344952 )
 texture = ExtResource( 5 )
 
 [node name="aDoorArea2d" type="Area2D" parent="nDoor"]
@@ -10810,11 +10761,13 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/HouseMask = SubResource( 1453 )
 
-[node name="cHouseMask" type="ColorRect" parent="."]
-margin_left = 24.0
-margin_top = 22.0
-margin_right = 569.0
-margin_bottom = 425.0
+[node name="cHouseMaskNode2d" type="Node2D" parent="."]
+position = Vector2( 24, 13.6756 )
+z_index = 1
+
+[node name="cHouseMask" type="ColorRect" parent="cHouseMaskNode2d"]
+margin_right = 545.0
+margin_bottom = 403.0
 mouse_filter = 2
 color = Color( 0.12549, 0.12549, 0.101961, 1 )
 __meta__ = {
