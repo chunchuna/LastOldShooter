@@ -2,7 +2,7 @@ extends Node
  # debug 
 
 
-func log(ins,text,error):
+func log(ins,text,error)-> void:
 	
 
 	var logFormat =str(ins+"("+str(text)+")")
@@ -13,3 +13,5 @@ func log(ins,text,error):
 		print(logFormat)
 
 	pass
+
+

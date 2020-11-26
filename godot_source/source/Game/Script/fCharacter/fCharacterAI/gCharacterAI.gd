@@ -16,8 +16,7 @@ onready var line2d =$Line2D
 onready var lin2dTimer =$tLine2dTimer
 
 #dabug
-var debug =true
-
+var debugDraw =false 
 # data 
 var aiMoveSpeed =200
 var statePoint
@@ -59,7 +58,7 @@ func _process(delta):
 	pass
 	
 	
-func _physics_process(delta):
+func _physics_process(delta)->void:
 	
 	
 	move_and_slide(moveVec)
@@ -75,11 +74,11 @@ func _physics_process(delta):
 
 		pass	
 
-	if stateAi.has("follow") and !stateAi.has("move"):
+	if stateAi.has("follow") and !stateAi.has("move") and !stopMovement:
 		stateAIfloowPlayer()
 
 
-func _draw():
+func _draw()-> void:
 	#draw_line(position,player.position,Color(0, 0, 1),0.5,false)
 	pass		
 func iniAImove():
@@ -88,12 +87,12 @@ func iniAImove():
 	Normalmovetimer.start()
 	
 func iniDebug():
-	if debug:
+	if debugDraw:
 		lin2dTimer.start(true)
 	pass	
 
 # ------------------------------------------------------------------ACTION
-func stateAImove():
+func stateAImove()-> void:
 	# 移动
 	moveVec=Vector2.ZERO
 	randomize()
@@ -115,11 +114,11 @@ func stateAImove():
 
 	#bug.log("character",moveType,false)
 	
-func stateAIattack():
+func stateAIattack()-> void:
 	# 攻击
 	pass  
 	
-func stateAIfloowPlayer():
+func stateAIfloowPlayer() -> void:
 	
 	# follow player
 
@@ -130,28 +129,24 @@ func stateAIfloowPlayer():
 	if global_position.distance_to(player.global_position)>followDistance:
 		dir =move_and_slide(dir)
 	
-	
-	
-	
- 
 
 	
 	pass
 	
-func stateAIloot():
+func stateAIloot() ->void:
 	# 拾取道具 
 	pass
 	
  
 # --------------------------------------------------------------- POINT STATE
 
-func statePointDie():
+func statePointDie() ->void:
    pass     
 
 # ---------------------------------------------------------------- MOVE TIMER
 
 
-func _on_tNormalMoveTimer_timeout():
+func _on_tNormalMoveTimer_timeout()->void:
 	# MoveCutTimer
 
 	if allowMove and !stopMovement:
@@ -164,6 +159,7 @@ func _on_tNormalMoveTimer_timeout():
 			else:
 				# random move type
 				Normalmovetimer.wait_time=int(rand_range(randomMoveTimeCutValueRange.min,randomMoveTimeCutValueRange.max))
+				
 
 
 				
@@ -171,7 +167,7 @@ func _on_tNormalMoveTimer_timeout():
 
 
 		if huamMoveType:
-			# 模仿人类玩家移动模式
+			# Human Type
 			if getInfastMoveType:
 				Normalmovetimer.wait_time=0.1
 				stateAImove()
@@ -201,16 +197,17 @@ func _on_tLine2dTimer_timeout():
 			
 	#lin2d timer
 	
-	if stateAi.has("follow"):
+	if stateAi.has("follow") and debugDraw:
 
-		# draw line -----
+		# debug draw line -----
 
 		line2d.add_point(global_position-player.global_position)
 		line2d.add_point(player.global_position-global_position)
 		yield(get_tree().create_timer(0.5),"timeout")
 		line2d.clear_points()
-
 		# drwa box -----
+		
+
 
 
 	pass # Replace with function body.

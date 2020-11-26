@@ -6,8 +6,8 @@
 	],
 	"settings": {
 		"godot_tools.editor_path": "e:\\AGODOT引擎\\Cyberpunk 2077 预先测试版 (A10).exe",
-		"editor.fontFamily": "monospace,Consolas, 'Courier New', monospace",
-		"editor.fontSize": 22,
+		"editor.fontFamily": "JetBrains Mono,monospace,Consolas, 'Courier New', monospace",
+		"editor.fontSize": 15,
 		"editor.fontLigatures": null,
 		"editor.foldingStrategy": "indentation",
 	}

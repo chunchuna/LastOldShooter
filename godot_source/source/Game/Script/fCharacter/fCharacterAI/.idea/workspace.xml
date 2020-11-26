@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f24f7d56-2e72-4782-9beb-91097ec60631" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../../.." />
@@ -14,15 +25,17 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -35,17 +48,29 @@
       <updated>1606217362649</updated>
       <workItem from="1606217381603" duration="206000" />
       <workItem from="1606217785902" duration="13000" />
+      <workItem from="1606318454651" duration="802000" />
+      <workItem from="1606319316168" duration="257000" />
+      <workItem from="1606319696378" duration="20000" />
+      <workItem from="1606320583940" duration="72000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="550" y="324" key="SettingsEditor" timestamp="1606217508855">
+    <state x="879" y="313" key="FileChooserDialogImpl" timestamp="1606319283277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="550" y="324" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606217508855" />
+    <state x="879" y="313" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606319283277" />
+    <state x="741" y="271" key="IDE.errors.dialog" timestamp="1606320625125">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="741" y="271" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606320625125" />
+    <state x="375" y="283" key="SettingsEditor" timestamp="1606319572656">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="375" y="283" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606319572656" />
     <state x="414" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1606217786652">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

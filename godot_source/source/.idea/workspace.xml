@@ -57,9 +57,14 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="ApplicationSettingsConfigurable" />
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="RunManager">
+    <configuration name="gConsole" type="godotConfiguration" factoryName="Godot" temporary="true" executable="godot" workingDirectory="$PROJECT_DIR$/Game/Script/fGlobalData" parameters="--script gConsole.gd">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -89,42 +94,45 @@
       <workItem from="1606138798345" duration="18000" />
       <workItem from="1606138980159" duration="45000" />
       <workItem from="1606139313777" duration="115000" />
+      <workItem from="1606316226188" duration="820000" />
+      <workItem from="1606320076108" duration="176000" />
+      <workItem from="1606320279749" duration="227000" />
+      <workItem from="1606320519545" duration="36000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="606" y="172" key="#Plugins" timestamp="1606134936501">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="606" y="172" key="#Plugins/0.0.1920.1040@0.0.1920.1040" timestamp="1606134936501" />
-    <state x="1088" y="293" key="FileChooserDialogImpl" timestamp="1606136924083">
+    <state x="1088" y="293" key="FileChooserDialogImpl" timestamp="1606320505696">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1088" y="293" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606136924083" />
-    <state x="594" y="274" width="1158" height="721" key="IDE.errors.dialog" timestamp="1606138307890">
+    <state x="1088" y="293" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606320505696" />
+    <state x="594" y="274" width="1158" height="721" key="IDE.errors.dialog" timestamp="1606320409023">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="594" y="274" width="1158" height="721" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606138307890" />
-    <state x="524" y="183" key="SettingsEditor" timestamp="1606138499459">
+    <state x="594" y="274" width="1158" height="721" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606320409023" />
+    <state x="150" y="328" key="SettingsEditor" timestamp="1606320538217">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="524" y="183" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606138499459" />
+    <state x="150" y="328" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606320538217" />
     <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1606139313790">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

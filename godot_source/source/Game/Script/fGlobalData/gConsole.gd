@@ -11,6 +11,7 @@ func _ready():
 	Console.add_command("mod:get_mod_list",self,"mod_get_mod_list").set_description("获取mod列表").register()
 	Console.add_command("characterAI:reback",self,"rebackCharacterAI").set_description("重置所有AI玩家").register()
 	Console.add_command("characterAI:StopMovement",self,"stopCharacterAImove").set_description("停止AI玩家的移动").register()
+	Console.add_command("characterAI:debugTarget",self,"debugCharacterAI").set_description("开关AIdebug模式").register()
 	
 	Console.connect("click_meta",self,"click_meta")
 	pass
@@ -52,7 +53,8 @@ func Weapon_BULLET_MAX():
 # mod @@
 
 func mod_get_mod_list():
-	#获取节点列表
+	
+	# get mod list
 	var mod_system =get_tree().get_root().find_node("modSystem",true,false)
 	var mod_list_ =mod_system.mod_list
 	Console.write_line("[b][shake rete=10 level=10]### MOD LIST ###[/shake]")
@@ -68,7 +70,8 @@ func mod_get_mod_list():
 
 
 func rebackCharacterAI():
-	#重置所有AI玩家
+	
+	# reback ai position
 	for characterAI in get_tree().get_nodes_in_group("characterAI"):
 		characterAI.position=characterAI.homePosition
 		bug.log("console","已经初始化AI玩家",false)
@@ -78,7 +81,8 @@ func rebackCharacterAI():
 
 
 func stopCharacterAImove ():
-	# 停止所有AI玩家的移动
+	
+	# stop ai movementsa
 	
 	for characterAI in get_tree().get_nodes_in_group("characterAI"):
 		if ! characterAI.stopMovement:
@@ -91,7 +95,22 @@ func stopCharacterAImove ():
 	
 	pass
 
-# 点击了 meta
+
+func debugCharacterAI ():
+	 
+	# AI debugDraw target
+	for characterAI in get_tree().get_nodes_in_group("characterAI"):
+		if characterAI.debugDraw:
+			characterAI.debugDraw=false
+		else:
+			# open debug draw system
+			characterAI.debugDraw=true
+			characterAI.lin2dTimer.start(true)	
+	
+	
+	
+	pass
+# CKICK META
 	
 func click_meta(meta):
 	for mods in get_tree().get_nodes_in_group("mods"):
