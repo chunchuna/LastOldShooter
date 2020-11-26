@@ -9,7 +9,7 @@
 # 如何打开 DEBUG 模式
 
 ### 按下 F1 可以打开 debug 控制台
-### 想要打开AI的 debug界面，请导航到 \Game\Script\fCharacter\fCharacterAI\gCharacterAI.gd 改动变量列表的：
+### 想要打开AI的 debug界面，请导航到 ` \Game\Script\fCharacter\fCharacterAI\gCharacterAI.gd `改动变量列表的：
 ```Gdscript
  
 var debugDraw =true
