@@ -19,7 +19,8 @@ extents = Vector2( 454.025, 392.754 )
 "characterAI",
 ]]
 z_index = 1
-collision_mask = 3
+collision_layer = 4
+collision_mask = 6
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -100,6 +101,19 @@ wait_time = 3.0
 autostart = true
 
 [node name="tLine2dTimer" type="Timer" parent="."]
+
+[node name="nDebugDraw" type="Node2D" parent="."]
+z_index = 5
+
+[node name="cBox" type="ColorRect" parent="nDebugDraw"]
+self_modulate = Color( 0.65098, 0.886275, 0.47451, 0.54902 )
+margin_left = -23.4899
+margin_top = -64.112
+margin_right = 27.5101
+margin_bottom = 8.88802
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_shape_entered" from="Bedamge_node/Area2D" to="Bedamge_node" method="_on_Area2D_body_shape_entered"]
 [connection signal="body_shape_entered" from="nCharacterArea2d" to="nCharacterWeapon" method="_on_nCharacterArea2d_body_shape_entered"]
 [connection signal="body_shape_exited" from="nCharacterArea2d" to="nCharacterWeapon" method="_on_nCharacterArea2d_body_shape_exited"]

@@ -16,6 +16,8 @@ onready var line2d =$Line2D
 onready var lin2dTimer =$tLine2dTimer
 onready var nameLable:RichTextLabel =$nCharacterUI/Control/nNameLable
 
+onready var cBox :ColorRect=$nDebugDraw/cBox
+
 #dabug
 var debugDraw =false 
 # data 
@@ -48,6 +50,8 @@ var randomMoveTimeCutValueRange={     # 随机移动间隔范围
 var hp =5000
 var homePosition   # 初始位置
 
+# debug var 
+
 
 
 func _ready():
@@ -58,6 +62,7 @@ func _ready():
 	
 
 func _process(delta):
+	debugDrawcBox()
 	playerinRange=characterWeaponNode.playerInRange 
 	pass
 	
@@ -197,26 +202,7 @@ func _on_tMoveTypeChangeTimer_timeout():
 
 
 
-func _on_tLine2dTimer_timeout():
-			
-	#lin2d timer
-	
-	if stateAi.has("follow") and debugDraw:
 
-		# debug draw line -----
-
-		line2d.add_point(global_position-player.global_position)
-		line2d.add_point(player.global_position-global_position)
-		yield(get_tree().create_timer(0.5),"timeout")
-		line2d.clear_points()
-		# drwa box -----
-		
-
-
-
-	pass # Replace with function body.
-		
-		
 # ------------------------------------------------------------------Human Little Trick		
 
 #node
@@ -234,7 +220,12 @@ func contactGetHurt(dmg)->void:
 func IniramdomName()->bool:
 	# set ramdom name 
 	var characterName ="character"
-	var characterNameData =["bilbili-3556","iamheroroooo","CAtboy","asdasd","nick","twitch_yyus","shapeifyou","KoooooooUU","FUYCKUUU"]
+	# name data
+	var characterNameData =[
+		"bilbili-3556","iamheroroooo","CAtboy","asdasd","nick","twitch_yyus","shapeifyou","KoooooooUU","FUYCKUUU"
+
+
+	]
 	if setRandomName:
 
 		var teampNumber =int(rand_range(-1,10))
@@ -247,5 +238,32 @@ func IniramdomName()->bool:
 	
 	pass
 
+# debug draw 
+
+func debugDrawcBox ()->void:
+	# cBox
+	if debugDraw:
+		cBox.visible=true
+	else:
+		cBox.visible=false	
+	pass
 
 
+func _on_tLine2dTimer_timeout():
+			
+		#lin2d 
+		
+		if stateAi.has("follow") and debugDraw:
+	
+			# debug draw line -----
+	
+			line2d.add_point(global_position-player.global_position)
+			line2d.add_point(player.global_position-global_position)
+			yield(get_tree().create_timer(0.5),"timeout")
+			line2d.clear_points()
+			# drwa box -----
+		
+	
+		pass # Replace with function body.
+			
+			

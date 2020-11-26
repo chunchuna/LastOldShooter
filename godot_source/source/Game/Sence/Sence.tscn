@@ -35,23 +35,23 @@ editor_draw_screen = false
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( -6.10352e-05, 0 )
 
+[node name="player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -88.2439, 848.195 )
+
 [node name="nCharacterAI" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( -1078.98, 616.241 )
+position = Vector2( -236.4, 776.011 )
 
 [node name="nCharacterAI2" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( -936.026, 759.193 )
+position = Vector2( -350.762, 858.419 )
 
 [node name="nCharacterAI3" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( -661.893, 855.056 )
+position = Vector2( -298.626, 937.464 )
 
 [node name="nCharacterAI4" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( -74.9477, 816.374 )
 
 [node name="nCharacterAI5" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 214.321, 821.42 )
-
-[node name="player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 263.858, 473.728 )
+position = Vector2( 244.593, 831.511 )
 
 [node name="test-man2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 805.209, 112.107 )
