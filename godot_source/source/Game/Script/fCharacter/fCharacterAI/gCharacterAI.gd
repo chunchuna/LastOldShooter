@@ -260,7 +260,7 @@ func _on_tLine2dTimer_timeout():
 			line2d.add_point(player.global_position-global_position)
 			yield(get_tree().create_timer(0.5),"timeout")
 			line2d.clear_points()
-			# drwa box -----
+			
 		
 	
 		pass # Replace with function body.
