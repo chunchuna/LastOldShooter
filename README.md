@@ -6,7 +6,7 @@
 ### 美术资源 放在`Art`目录下
 ## 各位大佬修改了工程文件的话不要提交到0020，目前0020是主版本，请提交至0030！！谢谢！！
 
-# 如何打开 DEBUG 模式
+# DEBUG 模式
 
 ### 按下 F1 可以打开 debug 控制台
 ### 想要打开AI的 debug界面，请导航到 ` \Game\Script\fCharacter\fCharacterAI\gCharacterAI.gd `改动变量列表的：
