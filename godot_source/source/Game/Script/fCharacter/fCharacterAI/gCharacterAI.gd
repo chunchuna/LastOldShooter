@@ -14,6 +14,7 @@ onready var player =get_tree().get_root().find_node("player",true,false)
 
 onready var line2d =$Line2D
 onready var lin2dTimer =$tLine2dTimer
+onready var nameLable:RichTextLabel =$nCharacterUI/Control/nNameLable
 
 #dabug
 var debugDraw =false 
@@ -33,6 +34,8 @@ var getInfastMoveType=false #进入快速移动模式
 
 var attackDesireValue = 0  #进攻欲望
 
+# name 
+var setRandomName =true # 随机名字
 
 
 var playerinRange=false # 玩家在范围
@@ -48,6 +51,7 @@ var homePosition   # 初始位置
 
 
 func _ready():
+	IniramdomName()
 	homePosition=position
 	iniAImove()
 	iniDebug()
@@ -216,7 +220,7 @@ func _on_tLine2dTimer_timeout():
 # ------------------------------------------------------------------Human Little Trick		
 
 #node
-func contactGetHurt(dmg):
+func contactGetHurt(dmg)->void:
 	#GET HURT
 	hp-=dmg
 	bug.log("character","currenthp"+str(hp),false)
@@ -225,7 +229,23 @@ func contactGetHurt(dmg):
 
 	
 
+# name
 
+func IniramdomName()->bool:
+	# set ramdom name 
+	var characterName ="character"
+	var characterNameData =["bilbili-3556","iamheroroooo","CAtboy","asdasd","nick","twitch_yyus","shapeifyou","KoooooooUU","FUYCKUUU"]
+	if setRandomName:
+
+		var teampNumber =int(rand_range(-1,10))
+		characterName=characterNameData[teampNumber]
+		nameLable.bbcode_text=characterName
+		return true
+	else:
+		return false
+
+	
+	pass
 
 
 

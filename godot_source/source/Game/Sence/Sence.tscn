@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game/fTSCN/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Script/fNavigatationFindPath/Navigation2D.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Game/fTSCN/fModSystem/modSystem.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Sence/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/fTSCN/fHouse/House.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/fTSCN/fCharacterAI/nCharacterAI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Game/fTSCN/fHouse/nHouseCloset.tscn" type="PackedScene" id=14]
 
 [node name="Sence" type="Node2D"]
@@ -33,6 +34,21 @@ editor_draw_screen = false
 
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( -6.10352e-05, 0 )
+
+[node name="nCharacterAI" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -1078.98, 616.241 )
+
+[node name="nCharacterAI2" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -936.026, 759.193 )
+
+[node name="nCharacterAI3" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -661.893, 855.056 )
+
+[node name="nCharacterAI4" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -74.9477, 816.374 )
+
+[node name="nCharacterAI5" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 214.321, 821.42 )
 
 [node name="player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 263.858, 473.728 )
