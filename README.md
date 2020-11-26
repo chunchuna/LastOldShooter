@@ -9,7 +9,7 @@ You live in a peaceful village, and zombies erupt a few days later. How can you 
 
 Godot engine natively supports keyboards and gamepads (Xbox, DualShock and Nintendo). Xbox buttons are shown in square brackets below.
 
-* Move: Arrow keys, Vi keys, ASDW .
+* Move: [WASD].
 * Reload: [R].
 * debug_console: [F1].
 
