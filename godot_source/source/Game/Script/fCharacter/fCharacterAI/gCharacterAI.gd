@@ -235,7 +235,6 @@ func IniramdomName()->bool:
 	else:
 		return false
 
-	
 	pass
 
 # debug draw 
