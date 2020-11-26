@@ -6,7 +6,7 @@
 ### 美术资源 放在`Art`目录下
 ## 各位大佬修改了工程文件的话不要提交到0020，目前0020是主版本，请提交至0030！！谢谢！！
 
-# DEBUG 模式
+# 调试模式
 
 ### 按下 F1 可以打开 debug 控制台
 ### 想要打开AI的 debug界面，请导航到 ` \Game\Script\fCharacter\fCharacterAI\gCharacterAI.gd `改动变量列表的：
@@ -25,7 +25,7 @@ var debugDraw =true
 (最后一个老射手) 是一款用[Godot引擎](https://godotengine.org)制作的45°战略生存游戏。
 你住在一个宁静的村庄，几天后僵尸就会爆发。你怎么活下来，提防可怕的僵尸和不友善的人。
 
-# SCREENSHOT
+# 屏幕截图
 ![image](https://github.com/chunchuna/LastOldShooter/blob/master/Demo/a.gif)
 ![image](https://github.com/chunchuna/LastOldShooter/blob/master/Demo/c.png)
 ![image](https://github.com/chunchuna/LastOldShooter/blob/master/Demo/b.png)
