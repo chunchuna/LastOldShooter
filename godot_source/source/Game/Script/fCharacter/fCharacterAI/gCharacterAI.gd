@@ -80,7 +80,6 @@ func _physics_process(delta)->void:
 	
 	if stateAi.has("attck"):
 		stateAIattack()
-
 		pass	
 
 	if stateAi.has("follow") and !stateAi.has("move") and !stopMovement:
