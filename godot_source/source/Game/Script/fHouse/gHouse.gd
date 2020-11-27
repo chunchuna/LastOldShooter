@@ -15,8 +15,8 @@ onready var doorState="close"  # door state
 
 
 # House 
-onready var HouseMask =$cHouseMask
-onready var HouseAreaShape =$aHouseArea2d/shape
+onready var HouseMask =$cHouseMaskNode2d
+onready var HouseAreaShape =$cHouseMaskNode2d/cHouseMask
 export (bool) var is_inHouse =false
 # Animayion 
 onready var animation =$AnimationPlayer
@@ -24,7 +24,7 @@ onready var animation =$AnimationPlayer
 
 func _ready():
 	doorButton.visible=false
-	HouseMask.visible=true
+	HouseAreaShape.visible=true
 	pass
 
 

@@ -103,6 +103,7 @@ autostart = true
 [node name="tLine2dTimer" type="Timer" parent="."]
 
 [node name="nDebugDraw" type="Node2D" parent="."]
+visible = false
 z_index = 5
 
 [node name="cBox" type="ColorRect" parent="nDebugDraw"]
