@@ -31,9 +31,9 @@ var debugDraw =true
 你住在一个宁静的村庄，几天后僵尸就会爆发。你怎么活下来，提防可怕的僵尸和不友善的人。
 
 # 屏幕截图
-![image](https://github.com/chunchuna/LastOldShooter/blob/master/Demo/a.gif)
 ![image](https://github.com/chunchuna/LastOldShooter/blob/master/Demo/c.png)
 ![image](https://github.com/chunchuna/LastOldShooter/blob/master/Demo/b.png)
+![image](https://github.com/chunchuna/LastOldShooter/blob/master/Demo/a.gif)
 ![image](https://github.com/chunchuna/LastOldShooter/blob/master/Demo/screenshoot1.png)
 
 
