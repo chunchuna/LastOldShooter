@@ -92,6 +92,7 @@ mod_r={
 
 2d_physics/layer_1="玩家"
 2d_physics/layer_2="互动物"
+2d_physics/layer_3="演员"
 
 [rendering]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Game/fTSCN/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Script/fNavigatationFindPath/Navigation2D.gd" type="Script" id=2]
@@ -8,7 +8,9 @@
 [ext_resource path="res://Game/Sence/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/fTSCN/fHouse/House.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Game/fTSCN/fCharacterAI/nCharacterAI.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Game/fTSCN/fHouse/nHouseCloset.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Game/fTSCN/fActor/fStoreActor/nbed.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Game/fTSCN/fActor/fStoreActor/nHouseCloset.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Game/Script/fActor/gHouseCloset.gd" type="Script" id=11]
 
 [node name="Sence" type="Node2D"]
 position = Vector2( 0.840881, 0.840942 )
@@ -35,11 +37,19 @@ editor_draw_screen = false
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( -6.10352e-05, 0 )
 
+[node name="nHousebed" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -701.54, 39.2635 )
+z_index = 1
+
+[node name="nHouseCloset" parent="YSort/nHousebed" instance=ExtResource( 10 )]
+position = Vector2( 346.059, -82.0553 )
+script = ExtResource( 11 )
+
 [node name="player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( -88.2439, 848.195 )
+position = Vector2( -516.244, 518.195 )
 
 [node name="nCharacterAI" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( -236.4, 776.011 )
+position = Vector2( -499.471, 39.3836 )
 
 [node name="nCharacterAI2" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( -350.762, 858.419 )
@@ -59,10 +69,6 @@ position = Vector2( 805.209, 112.107 )
 [node name="test-man" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 685.097, 112.107 )
 
-[node name="nHouseCloset" parent="YSort" instance=ExtResource( 14 )]
-position = Vector2( -130.392, 202.21 )
-z_index = 1
-
 [node name="Box" type="Node2D" parent="."]
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
@@ -71,8 +77,14 @@ script = ExtResource( 2 )
 [node name="gHouse" type="Node2D" parent="."]
 position = Vector2( 4.76215, -3.1748 )
 
-[node name="TestHouse1" parent="gHouse" instance=ExtResource( 7 )]
-position = Vector2( -604.338, 28.1552 )
+[node name="House" parent="gHouse" instance=ExtResource( 7 )]
+position = Vector2( -840.809, -265.113 )
 doorLock = false
 
-[editable path="gHouse/TestHouse1"]
+[node name="House2" parent="gHouse" instance=ExtResource( 7 )]
+position = Vector2( 1086.01, 1.58566 )
+doorLock = false
+
+[node name="House3" parent="gHouse" instance=ExtResource( 7 )]
+position = Vector2( 1101, 708.787 )
+doorLock = false
