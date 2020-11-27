@@ -14,16 +14,13 @@ onready var player =get_tree().get_root().find_node("player",true,false)
 
 onready var line2d =$Line2D
 onready var lin2dTimer =$tLine2dTimer
-onready var nameLable:RichTextLabel =$nCharacterUI/Control/nNameLable
-
-onready var cBox :ColorRect=$nDebugDraw/cBox
 
 #dabug
-var debugDraw =false 
+var debugDraw =true
 # data 
 var aiMoveSpeed =200
 var statePoint
-var stateAi=["follow","attack"] 
+var stateAi=["move","attack"] 
 var moveVec=Vector2()
 # 移动
 var allowMove=true  #移动开关	
@@ -36,8 +33,6 @@ var getInfastMoveType=false #进入快速移动模式
 
 var attackDesireValue = 0  #进攻欲望
 
-# name 
-var setRandomName =true # 随机名字
 
 
 var playerinRange=false # 玩家在范围
@@ -50,29 +45,25 @@ var randomMoveTimeCutValueRange={     # 随机移动间隔范围
 var hp =5000
 var homePosition   # 初始位置
 
-# debug var 
-
 
 
 func _ready():
-	IniramdomName()
 	homePosition=position
 	iniAImove()
 	iniDebug()
 	
 
 func _process(delta):
-	debugDrawcBox()
 	playerinRange=characterWeaponNode.playerInRange 
 	pass
 	
 	
-func _physics_process(delta)->void:
+func _physics_process(delta):
 	
 	
 	move_and_slide(moveVec)
 	
-	# STATE
+	# 状态机
 	if stateAi.has("move"):
 		allowMove=true
 	else:
@@ -80,13 +71,14 @@ func _physics_process(delta)->void:
 	
 	if stateAi.has("attck"):
 		stateAIattack()
+
 		pass	
 
-	if stateAi.has("follow") and !stateAi.has("move") and !stopMovement:
+	if stateAi.has("follow") and !stateAi.has("move"):
 		stateAIfloowPlayer()
 
 
-func _draw()-> void:
+func _draw():
 	#draw_line(position,player.position,Color(0, 0, 1),0.5,false)
 	pass		
 func iniAImove():
@@ -99,8 +91,8 @@ func iniDebug():
 		lin2dTimer.start(true)
 	pass	
 
-# ------------------------------------------------------------------ACTION
-func stateAImove()-> void:
+# ------------------------------------------------------------------动作状态
+func stateAImove():
 	# 移动
 	moveVec=Vector2.ZERO
 	randomize()
@@ -122,39 +114,41 @@ func stateAImove()-> void:
 
 	#bug.log("character",moveType,false)
 	
-func stateAIattack()-> void:
+func stateAIattack():
 	# 攻击
 	pass  
 	
-func stateAIfloowPlayer() -> void:
+func stateAIfloowPlayer():
 	
-	# follow player
 
-	var followDistance = 120 # limit distance
-	var ramdonOffset =Vector2( rand_range(-300,300),rand_range(-300,300))
-
-	var dir = global_position.direction_to(player.global_position+ramdonOffset)*aiMoveSpeed
+	var followDistance = 230 # 跟随极限距离
+	# 跟随玩家 自动寻路
+ 
+	var dir = global_position.direction_to(player.global_position)*aiMoveSpeed
 	if global_position.distance_to(player.global_position)>followDistance:
 		dir =move_and_slide(dir)
 	
+	
+	
+	
+ 
 
 	
 	pass
 	
-func stateAIloot() ->void:
+func stateAIloot():
 	# 拾取道具 
 	pass
 	
  
-# --------------------------------------------------------------- POINT STATE
+# ---------------------------------------------------------------指向状态    
 
-func statePointDie() ->void:
+func statePointDie():
    pass     
 
-# ---------------------------------------------------------------- MOVE TIMER
+# ---------------------------------------------------------------- 移动计时器 
 
-
-func _on_tNormalMoveTimer_timeout()->void:
+func _on_tNormalMoveTimer_timeout():
 	# MoveCutTimer
 
 	if allowMove and !stopMovement:
@@ -167,7 +161,6 @@ func _on_tNormalMoveTimer_timeout()->void:
 			else:
 				# random move type
 				Normalmovetimer.wait_time=int(rand_range(randomMoveTimeCutValueRange.min,randomMoveTimeCutValueRange.max))
-				
 
 
 				
@@ -175,7 +168,7 @@ func _on_tNormalMoveTimer_timeout()->void:
 
 
 		if huamMoveType:
-			# Human Type
+			# 模仿人类玩家移动模式
 			if getInfastMoveType:
 				Normalmovetimer.wait_time=0.1
 				stateAImove()
@@ -201,67 +194,37 @@ func _on_tMoveTypeChangeTimer_timeout():
 
 
 
+func _on_tLine2dTimer_timeout():
+			
+	#lin2d 计时器
+	
+	if debugDraw:
 
+		# 画出连接线
+
+		line2d.add_point(global_position-player.global_position)
+		line2d.add_point(player.global_position-global_position)
+		yield(get_tree().create_timer(0.5),"timeout")
+		line2d.clear_points()
+
+
+		
+	pass # Replace with function body.
+		
+		
 # ------------------------------------------------------------------Human Little Trick		
 
 #node
-func contactGetHurt(dmg)->void:
-	#GET HURT
+func contactGetHurt(dmg):
+	#受到伤害
 	hp-=dmg
-	bug.log("character","currenthp"+str(hp),false)
+	#bug.log("character","currenthp"+str(hp),false)
 	if hp<=0:
 		hp=0
 
 	
 
-# name
-
-func IniramdomName()->bool:
-	# set ramdom name 
-	var characterName ="character"
-	# name data
-	var characterNameData =[
-		"bilbili-3556","iamheroroooo","CAtboy","asdasd","nick","twitch_yyus","shapeifyou","KoooooooUU","FUYCKUUU"
 
 
-	]
-	if setRandomName:
-
-		var teampNumber =int(rand_range(-1,10))
-		characterName=characterNameData[teampNumber]
-		nameLable.bbcode_text=characterName
-		return true
-	else:
-		return false
-
-	pass
-
-# debug draw 
-
-func debugDrawcBox ()->void:
-	# cBox
-	if debugDraw:
-		cBox.visible=true
-	else:
-		cBox.visible=false	
-	pass
 
 
-func _on_tLine2dTimer_timeout():
-			
-		#lin2d 
-		
-		if stateAi.has("follow") and debugDraw:
-	
-			# debug draw line -----
-	
-			line2d.add_point(global_position-player.global_position)
-			line2d.add_point(player.global_position-global_position)
-			yield(get_tree().create_timer(0.5),"timeout")
-			line2d.clear_points()
-			
-		
-	
-		pass # Replace with function body.
-			
-			
