@@ -14,11 +14,14 @@
 # 调试模式
 
 ### 按下 F1 可以打开 debug 控制台
-### 想要打开AI的 debug界面，请导航到 ` \Game\Script\fCharacter\fCharacterAI\gCharacterAI.gd `改动变量列表的：
-```Gdscript
- 
-var debugDraw =true
- 
+## 0045版本 debug更新为`全局绘制` 
+## 在节点下添加 `nDebugDraw ` 节点即可 
+## 控制台输入指令 `debug:drawtarge arg1` 开关debug绘制 
+``` gdscript 
+  arg1参数如下
+  enbleLine 导航条绘制
+  enbleCbox cbox绘制
+
 ```
 
 
