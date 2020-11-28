@@ -100,11 +100,11 @@ antialiased = true
 wait_time = 3.0
 autostart = true
 
+[node name="tLine2dTimer" type="Timer" parent="."]
+
 [node name="nDebugDraw" type="Node2D" parent="."]
 visible = false
 z_index = 5
-
-[node name="tLine2dTimer" type="Timer" parent="nDebugDraw"]
 
 [node name="cBox" type="ColorRect" parent="nDebugDraw"]
 self_modulate = Color( 0.65098, 0.886275, 0.47451, 0.54902 )
@@ -120,4 +120,4 @@ __meta__ = {
 [connection signal="body_shape_exited" from="nCharacterArea2d" to="nCharacterWeapon" method="_on_nCharacterArea2d_body_shape_exited"]
 [connection signal="timeout" from="tNormalMoveTimer" to="." method="_on_tNormalMoveTimer_timeout"]
 [connection signal="timeout" from="tMoveTypeChangeTimer" to="." method="_on_tMoveTypeChangeTimer_timeout"]
-[connection signal="timeout" from="nDebugDraw/tLine2dTimer" to="." method="_on_tLine2dTimer_timeout"]
+[connection signal="timeout" from="tLine2dTimer" to="." method="_on_tLine2dTimer_timeout"]
