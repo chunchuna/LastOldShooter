@@ -10,8 +10,8 @@ onready var selfNode =get_parent()
 
 
 var debugDraw=true
-export(bool) onready var isDrawCbox =true
-export(bool) onready var isDrawLine= true
+export(bool) onready var isDrawCbox 
+export(bool) onready var isDrawLine
 export(bool) var isPlayer=false
 
 func _ready():
@@ -23,6 +23,8 @@ func _process(delta):
 	if debugDraw:
 		if isDrawCbox:
 			drawCbox(debugDraw)
+		else:
+			drawCbox(false)	
 
 	pass
 	
