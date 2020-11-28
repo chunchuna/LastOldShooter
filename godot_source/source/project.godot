@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Button",
+"class": "baseButton",
+"language": "GDScript",
+"path": "res://Game/Script/fButton/gBaseButton.gd"
+} ]
 _global_script_class_icons={
-
+"baseButton": ""
 }
 
 [application]

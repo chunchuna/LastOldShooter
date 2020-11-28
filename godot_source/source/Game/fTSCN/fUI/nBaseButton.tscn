@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game/Script/fButton/gBaseButton.gd" type="Script" id=1]
+
+[node name="bDoorButton" type="Button" groups=[
+"gUI",
+]]
+anchor_left = -0.189
+anchor_right = 1.286
+anchor_bottom = 0.5
+margin_left = 37.4145
+margin_top = 102.593
+margin_right = 55.1895
+margin_bottom = 110.593
+mouse_default_cursor_shape = 2
+text = "Open"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="." to="." method="_on_bDoorButton_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_bDoorButton_mouse_exited"]

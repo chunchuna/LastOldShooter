@@ -95,15 +95,6 @@ func mCheckDoorpromission ()->bool:
 		return false	
 	
 
-func _on_bDoorButton_mouse_entered():
-	GlobalVar.vMouseOnui=true
-	
-	pass # Replace with function body.
-
-
-func _on_bDoorButton_mouse_exited():
-	GlobalVar.vMouseOnui=false
-	pass # Replace with function body.
 
 
 func _on_aHouseArea2d_body_shape_entered(body_id, body, body_shape, area_shape):

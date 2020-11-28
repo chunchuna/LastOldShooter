@@ -12,7 +12,7 @@ onready var selfNode =get_parent()
 var debugDraw=true
 export(bool) onready var isDrawCbox =true
 export(bool) onready var isDrawLine= true
-var isPlayer=false
+export(bool) var isPlayer=false
 
 func _ready():
 	cBox.visible=false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Game/fTSCN/fHouse/sHorWall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/fTSCN/fHouse/sVecWall.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Game/Script/fHouse/gHouse.gd" type="Script" id=4]
 [ext_resource path="res://Game/Art/House/sHouse_door.png" type="Texture" id=5]
 [ext_resource path="res://Game/Theme/uiTheme.tres" type="Theme" id=6]
+[ext_resource path="res://Game/fTSCN/fUI/nBaseButton.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 262, 138 )
@@ -111,21 +112,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bDoorButton" type="Button" parent="UI/ui" groups=[
-"gUI",
-]]
-anchor_left = -0.189
-anchor_right = 1.286
-anchor_bottom = 0.5
-margin_left = 37.4145
-margin_top = 102.593
-margin_right = 55.1895
-margin_bottom = 110.593
-mouse_default_cursor_shape = 2
-text = "Open"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="bDoorButton" parent="UI/ui" instance=ExtResource( 7 )]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/HouseMask = SubResource( 4 )
@@ -147,6 +134,4 @@ __meta__ = {
 [connection signal="body_shape_exited" from="aHouseArea2d" to="." method="_on_aHouseArea2d_body_shape_exited"]
 [connection signal="body_shape_entered" from="nDoor/aDoorArea2d" to="." method="_on_aDoorArea2d_body_shape_entered"]
 [connection signal="body_shape_exited" from="nDoor/aDoorArea2d" to="." method="_on_aDoorArea2d_body_shape_exited"]
-[connection signal="mouse_entered" from="UI/ui/bDoorButton" to="." method="_on_bDoorButton_mouse_entered"]
-[connection signal="mouse_exited" from="UI/ui/bDoorButton" to="." method="_on_bDoorButton_mouse_exited"]
 [connection signal="pressed" from="UI/ui/bDoorButton" to="." method="_on_bDoorButton_pressed"]
