@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "StoreActor",
+"language": "GDScript",
+"path": "res://Game/Script/fActor/fStoreActor/gHouseCloset.gd"
+}, {
 "base": "Button",
 "class": "baseButton",
 "language": "GDScript",
 "path": "res://Game/Script/fButton/gBaseButton.gd"
 } ]
 _global_script_class_icons={
+"StoreActor": "",
 "baseButton": ""
 }
 
