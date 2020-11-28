@@ -14,10 +14,10 @@
 position = Vector2( 0.840881, 0.840942 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -2994.51
-margin_top = -1116.73
-margin_right = 3215.49
-margin_bottom = 3297.27
+margin_left = -3096.45
+margin_top = -868.49
+margin_right = 3113.55
+margin_bottom = 3545.51
 color = Color( 0.239216, 0.227451, 0.227451, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -39,16 +39,16 @@ position = Vector2( -6.10352e-05, 0 )
 position = Vector2( -88.2439, 848.195 )
 
 [node name="nCharacterAI" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( -236.4, 776.011 )
+position = Vector2( -352.497, 782.618 )
 
 [node name="nCharacterAI2" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( -350.762, 858.419 )
 
 [node name="nCharacterAI3" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( -298.626, 937.464 )
+position = Vector2( -355.259, 937.464 )
 
 [node name="nCharacterAI4" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( -74.9477, 816.374 )
+position = Vector2( -359.999, 1011.76 )
 
 [node name="nCharacterAI5" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 244.593, 831.511 )

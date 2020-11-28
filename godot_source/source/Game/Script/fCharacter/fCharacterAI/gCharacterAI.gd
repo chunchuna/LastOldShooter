@@ -9,12 +9,10 @@ onready var moveTypeTimer:Timer=$tMoveTypeChangeTimer
 onready var targetArea2d =$nCharacterArea2d/CollisionShape2D
 onready var characterWeaponNode =$nCharacterWeapon
 
-onready var findPathNode =get_tree().get_root().find_node("Navigation2D",true,false)
+
 onready var player =get_tree().get_root().find_node("player",true,false)
 
 
-#dabug
-var debugDraw =true
 # data 
 var aiMoveSpeed =200
 var statePoint
@@ -123,9 +121,6 @@ func stateAIfloowPlayer():
 	
 	
 	
-	
- 
-
 	
 	pass
 	

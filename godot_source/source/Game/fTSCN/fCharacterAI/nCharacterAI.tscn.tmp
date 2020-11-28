@@ -88,6 +88,12 @@ z_index = 1
 visible = false
 shape = SubResource( 3 )
 
+[node name="Line2D" type="Line2D" parent="."]
+width = 0.5
+default_color = Color( 1, 0.027451, 0.027451, 1 )
+joint_mode = 1
+antialiased = true
+
 [node name="tNormalMoveTimer" type="Timer" parent="."]
 
 [node name="tMoveTypeChangeTimer" type="Timer" parent="."]
@@ -98,6 +104,8 @@ autostart = true
 visible = false
 z_index = 5
 
+[node name="tLine2dTimer" type="Timer" parent="nDebugDraw"]
+
 [node name="cBox" type="ColorRect" parent="nDebugDraw"]
 self_modulate = Color( 0.65098, 0.886275, 0.47451, 0.54902 )
 margin_left = -23.4899
@@ -107,14 +115,6 @@ margin_bottom = 8.88802
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Line2D" type="Line2D" parent="nDebugDraw"]
-width = 0.5
-default_color = Color( 1, 0.027451, 0.027451, 1 )
-joint_mode = 1
-antialiased = true
-
-[node name="tLine2dTimer" type="Timer" parent="nDebugDraw"]
 [connection signal="body_shape_entered" from="nBeHurt/Area2D" to="nBeHurt" method="_on_Area2D_body_shape_entered"]
 [connection signal="body_shape_entered" from="nCharacterArea2d" to="nCharacterWeapon" method="_on_nCharacterArea2d_body_shape_entered"]
 [connection signal="body_shape_exited" from="nCharacterArea2d" to="nCharacterWeapon" method="_on_nCharacterArea2d_body_shape_exited"]

@@ -22,9 +22,9 @@ shape = SubResource( 1 )
 
 [node name="nameLable" type="RichTextLabel" parent="nUI"]
 margin_left = -44.1622
-margin_top = -125.0
+margin_top = -125.595
 margin_right = 34.8378
-margin_bottom = -108.0
+margin_bottom = -108.595
 bbcode_enabled = true
 bbcode_text = "name"
 text = "name"
