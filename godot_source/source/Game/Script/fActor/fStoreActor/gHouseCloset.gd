@@ -17,15 +17,13 @@ func _ready():
 	namelable.bbcode_text="[center]"+node_name
 
 
-
+# UI show or hide
 
 func _on_area_body_entered(body):
 	if body:
 		if body.name=="player":
 			uiNode.visible=true
 		
-
-
 func _on_area_body_exited(body):
 	if body:
 		if body.name=="player":
@@ -47,5 +45,5 @@ func _on_seachButton_pressed():
 	
 func dataSeachItem()->void:
 	itemStore.clear()
-	# 放进背包
+	# get in bag
 	pass

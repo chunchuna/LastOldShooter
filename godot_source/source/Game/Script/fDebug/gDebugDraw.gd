@@ -9,7 +9,7 @@ onready var playerNode =get_tree().get_root().find_node("player",true,false)
 onready var selfNode =get_parent()
 
 
-var debugDraw=true
+var debugDraw=false
 export(bool) onready var isDrawCbox 
 export(bool) onready var isDrawLine
 export(bool) var isPlayer=false
@@ -21,10 +21,14 @@ func _ready():
 func _process(delta):
 	
 	if debugDraw:
+		# draw
 		if isDrawCbox:
 			drawCbox(debugDraw)
 		else:
 			drawCbox(false)	
+	else:
+
+		drawCbox(false)			
 
 	pass
 	

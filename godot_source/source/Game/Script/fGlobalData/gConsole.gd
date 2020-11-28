@@ -11,7 +11,7 @@ func _ready():
 	Console.add_command("mod:get_mod_list",self,"mod_get_mod_list").set_description("获取mod列表").register()
 	Console.add_command("characterAI:reback",self,"rebackCharacterAI").set_description("重置所有AI玩家").register()
 	Console.add_command("characterAI:StopMovement",self,"stopCharacterAImove").set_description("停止AI玩家的移动").register()
-	Console.add_command("characterAI:debugTarget",self,"debugCharacterAI").set_description("开关AIdebug模式").register()
+	Console.add_command("debug:drawtarge",self,"debugdraw").set_description("开关AIdebug模式").add_argument("quest",TYPE_STRING).register()
 	
 	Console.connect("click_meta",self,"click_meta")
 	pass
@@ -96,16 +96,22 @@ func stopCharacterAImove ():
 	pass
 
 
-func debugCharacterAI ():
+func debugdraw (quest="null"):
 	 
 	# AI debugDraw target
-	for characterAI in get_tree().get_nodes_in_group("characterAI"):
-		if characterAI.debugDraw:
-			characterAI.debugDraw=false
+	for debugg in get_tree().get_nodes_in_group("debugDrawGroup"):
+		print(debugg)
+		Console.write_line("正在修改debug状态")
+		if debugg.debugDraw:
+			debugg.debugDraw=false
 		else:
-			# open debug draw system
-			characterAI.debugDraw=true
-			characterAI.lin2dTimer.start(true)	
+			debugg.debugDraw=true
+			if quest=="enbleLine":
+				debugg.isDrawLine=true
+				pass
+			if quest=="enbleCbox":
+				debugg.isDrawCbox=true
+				pass		
 	
 	
 	

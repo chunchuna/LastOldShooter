@@ -96,6 +96,7 @@ wait_time = 3.0
 autostart = true
 
 [node name="nDebugDraw" parent="." instance=ExtResource( 6 )]
+isDrawCbox = true
 [connection signal="body_shape_entered" from="nBeHurt/Area2D" to="nBeHurt" method="_on_Area2D_body_shape_entered"]
 [connection signal="body_shape_entered" from="nCharacterArea2d" to="nCharacterWeapon" method="_on_nCharacterArea2d_body_shape_entered"]
 [connection signal="body_shape_exited" from="nCharacterArea2d" to="nCharacterWeapon" method="_on_nCharacterArea2d_body_shape_exited"]

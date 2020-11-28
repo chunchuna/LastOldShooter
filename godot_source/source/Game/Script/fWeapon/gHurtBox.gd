@@ -8,6 +8,7 @@ var dmg_text =preload("res://Game/fTSCN/dmg_text.tscn")
 var targe=false
 onready var player =get_tree().get_root().find_node("player",true,false)
 func _on_Area2D_body_shape_entered(body_id, body, body_shape, area_shape):
+	
 	if body!=null:
 		if body.get_parent().is_in_group("bullet"):
 			# 获取数据

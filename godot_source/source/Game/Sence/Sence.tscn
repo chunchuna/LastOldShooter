@@ -42,7 +42,7 @@ position = Vector2( -88.2439, 848.195 )
 position = Vector2( -434.614, 784.506 )
 
 [node name="nCharacterAI2" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( -434.767, 857.475 )
+position = Vector2( -413.41, 310.191 )
 
 [node name="nCharacterAI3" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( -436.432, 947.847 )
@@ -74,5 +74,3 @@ position = Vector2( 4.76215, -3.1748 )
 [node name="TestHouse1" parent="gHouse" instance=ExtResource( 7 )]
 position = Vector2( -604.338, 28.1552 )
 doorLock = false
-
-[editable path="gHouse/TestHouse1"]
