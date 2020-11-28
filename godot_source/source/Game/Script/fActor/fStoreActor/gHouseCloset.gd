@@ -36,16 +36,16 @@ func _on_area_body_exited(body):
 
 func _on_seachButton_pressed():
 
-    # 触发 seach
-    if itemStore.empty():
-        bug.log("storeActore","空",false)
-        pass
-    else:
-        print(itemStore)
-        dataSeachItem()
-        pass
+	# 触发 seach
+	if itemStore.empty():
+		bug.log("storeActore","空",false)
+		pass
+	else:
+		print(itemStore)
+		dataSeachItem()
+		pass
 	
 func dataSeachItem()->void:
-    itemStore.clear()
-    # 放进背包
-    pass
+	itemStore.clear()
+	# 放进背包
+	pass
