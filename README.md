@@ -23,6 +23,7 @@
   enbleCbox cbox绘制
 
 ```
+![image](https://github.com/chunchuna/LastOldShooter/blob/master/Demo/debug.png)
 
 
 # LAST OLD SHOOTER 最后的枪手
