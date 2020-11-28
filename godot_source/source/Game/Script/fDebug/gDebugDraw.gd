@@ -27,7 +27,6 @@ func _process(delta):
 		else:
 			drawCbox(false)	
 	else:
-
 		drawCbox(false)			
 
 	pass
