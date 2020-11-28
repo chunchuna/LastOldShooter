@@ -23,8 +23,7 @@ func _on_area_body_entered(body):
 	if body:
 		if body.name=="player":
 			uiNode.visible=true
-			
-	
+		
 
 
 func _on_area_body_exited(body):
