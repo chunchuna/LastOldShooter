@@ -1,0 +1,16 @@
+[gd_scene format=2]
+
+[node name="nDebugDraw" type="Node2D"]
+z_index = 5
+
+[node name="tLine2dTimer" type="Timer" parent="."]
+
+[node name="cBox" type="ColorRect" parent="."]
+self_modulate = Color( 0.65098, 0.886275, 0.47451, 0.54902 )
+margin_left = -23.4899
+margin_top = -64.112
+margin_right = 27.5101
+margin_bottom = 8.88802
+__meta__ = {
+"_edit_use_anchors_": false
+}

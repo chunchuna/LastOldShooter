@@ -23,7 +23,7 @@ onready var camera =get_tree().get_root().find_node("SenceCamera",true,false)
 
 # 是否拥有武器
 var has_weapon=true  
-export(String)var weapon_name="M4A1"
+export(String)var weapon_name="gun"
 var weapon_level=99
 
 var weaponType ="Gun"
