@@ -106,6 +106,10 @@ func debugdraw (quest="null"):
 			debugg.debugDraw=false
 		else:
 			debugg.debugDraw=true
+			# 参数
+
+			# --enbleLine 导航条绘制
+			# --enbleCbox cbox绘制
 			if quest=="enbleLine":
 				debugg.isDrawLine=true
 				pass
