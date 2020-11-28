@@ -88,19 +88,11 @@ z_index = 1
 visible = false
 shape = SubResource( 3 )
 
-[node name="Line2D" type="Line2D" parent="."]
-width = 0.5
-default_color = Color( 1, 0.027451, 0.027451, 1 )
-joint_mode = 1
-antialiased = true
-
 [node name="tNormalMoveTimer" type="Timer" parent="."]
 
 [node name="tMoveTypeChangeTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
-
-[node name="tLine2dTimer" type="Timer" parent="."]
 
 [node name="nDebugDraw" type="Node2D" parent="."]
 visible = false
@@ -115,9 +107,17 @@ margin_bottom = 8.88802
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Line2D" type="Line2D" parent="nDebugDraw"]
+width = 0.5
+default_color = Color( 1, 0.027451, 0.027451, 1 )
+joint_mode = 1
+antialiased = true
+
+[node name="tLine2dTimer" type="Timer" parent="nDebugDraw"]
 [connection signal="body_shape_entered" from="nBeHurt/Area2D" to="nBeHurt" method="_on_Area2D_body_shape_entered"]
 [connection signal="body_shape_entered" from="nCharacterArea2d" to="nCharacterWeapon" method="_on_nCharacterArea2d_body_shape_entered"]
 [connection signal="body_shape_exited" from="nCharacterArea2d" to="nCharacterWeapon" method="_on_nCharacterArea2d_body_shape_exited"]
 [connection signal="timeout" from="tNormalMoveTimer" to="." method="_on_tNormalMoveTimer_timeout"]
 [connection signal="timeout" from="tMoveTypeChangeTimer" to="." method="_on_tMoveTypeChangeTimer_timeout"]
-[connection signal="timeout" from="tLine2dTimer" to="." method="_on_tLine2dTimer_timeout"]
+[connection signal="timeout" from="nDebugDraw/tLine2dTimer" to="." method="_on_tLine2dTimer_timeout"]

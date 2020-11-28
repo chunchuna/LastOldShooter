@@ -12,8 +12,6 @@ onready var characterWeaponNode =$nCharacterWeapon
 onready var findPathNode =get_tree().get_root().find_node("Navigation2D",true,false)
 onready var player =get_tree().get_root().find_node("player",true,false)
 
-onready var line2d =$Line2D
-onready var lin2dTimer =$tLine2dTimer
 
 #dabug
 var debugDraw =true
@@ -50,7 +48,6 @@ var homePosition   # 初始位置
 func _ready():
 	homePosition=position
 	iniAImove()
-	iniDebug()
 	
 
 func _process(delta):
@@ -86,10 +83,6 @@ func iniAImove():
 	Normalmovetimer.wait_time=moveTimecut
 	Normalmovetimer.start()
 	
-func iniDebug():
-	if debugDraw:
-		lin2dTimer.start(true)
-	pass	
 
 # ------------------------------------------------------------------动作状态
 func stateAImove():
@@ -192,26 +185,7 @@ func _on_tMoveTypeChangeTimer_timeout():
 		pass # Replace with function body.
 	
 
-
-
-func _on_tLine2dTimer_timeout():
-			
-	#lin2d 计时器
 	
-	if debugDraw:
-
-		# 画出连接线
-
-		line2d.add_point(global_position-player.global_position)
-		line2d.add_point(player.global_position-global_position)
-		yield(get_tree().create_timer(0.5),"timeout")
-		line2d.clear_points()
-
-
-		
-	pass # Replace with function body.
-		
-		
 # ------------------------------------------------------------------Human Little Trick		
 
 #node
