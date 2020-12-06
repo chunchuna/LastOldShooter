@@ -33,6 +33,7 @@ func _process(delta):
 	doorStateController()
 	pass    
 
+# @进入房门范围检测
 func _on_aDoorArea2d_body_shape_entered(body_id, body, body_shape, area_shape):
 	if body:
 		if body.name=="player":
@@ -41,7 +42,7 @@ func _on_aDoorArea2d_body_shape_entered(body_id, body, body_shape, area_shape):
 	else:
 		return        
 	
-	
+# @离开房门	范围检测
 func _on_aDoorArea2d_body_shape_exited(body_id, body, body_shape, area_shape):
 			
 	if body:
@@ -50,7 +51,7 @@ func _on_aDoorArea2d_body_shape_exited(body_id, body, body_shape, area_shape):
 	
 	pass # Replace with function body.
 			
-
+# @ 开门按钮按下
 func _on_bDoorButton_pressed():
 	# door button
 	
@@ -70,7 +71,7 @@ func _on_bDoorButton_pressed():
 		doorState="close"
 		print("you close the door")
 
-
+# @ 房门状态控制管理
 func doorStateController():
 	
 	# Door state manager
@@ -86,7 +87,7 @@ func doorStateController():
 
 
 	
-
+# @ 房门开放权限管理
 func mCheckDoorpromission ()->bool:
 	# 检查门锁开放权限
 	if  GlobalVar.mainBag.has("key"):
@@ -96,7 +97,7 @@ func mCheckDoorpromission ()->bool:
 	
 
 
-
+# @进入房间范围检测
 func _on_aHouseArea2d_body_shape_entered(body_id, body, body_shape, area_shape):
 	# player in House 
 	if body:
@@ -107,7 +108,7 @@ func _on_aHouseArea2d_body_shape_entered(body_id, body, body_shape, area_shape):
 
 	
 
-
+# @离开房间范围检测
 func _on_aHouseArea2d_body_shape_exited(body_id, body, body_shape, area_shape):
 	# player out Hose 
 	if body:

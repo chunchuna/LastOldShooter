@@ -18,11 +18,12 @@ func _ready():
 	pass
 	
 	
-	
+# @ mod初始化
 func modIni():
 	# mod 系统初始化
 	var directory = Directory.new();
-	var doFileExists = directory.dir_exists(mods_path)	
+	var doFileExists = directory.dir_exists(mods_path)
+	# 创建Mode 文件夹	
 	if doFileExists:
 		print("存在Mod文件夹")
 		pass
@@ -32,20 +33,9 @@ func modIni():
 		print("已经初始化mod文件夹")
 		pass
 	pass
-		
-func normal_load_mod():
+
 	
-	ProjectSettings.load_resource_pack(mods_path+"mod1.pck", true)
-	var directory = Directory.new();
-	var doFileExists = directory.file_exists("res://mod1.tscn")
-	if doFileExists:
-		
-		var mod_ =load("res://mod1.tscn").instance()
-		add_child(mod_)
-		if mod_!=null:
-			pass
-	else:
-		print("no mod")	  #没有找到mod
+# @ 载入Mod 	
 
 func load_mods():
 	#载入mod

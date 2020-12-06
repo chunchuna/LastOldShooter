@@ -50,7 +50,7 @@ func Weapon_BULLET_MAX():
 	
 	
 	
-# mod @@
+# 方法
 
 func mod_get_mod_list():
 	

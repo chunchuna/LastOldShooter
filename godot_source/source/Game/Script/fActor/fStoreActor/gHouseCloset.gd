@@ -17,20 +17,21 @@ func _ready():
 	namelable.bbcode_text="[center]"+node_name
 
 
-# UI show or hide
+# @ UI显示
 
 func _on_area_body_entered(body):
 	if body:
 		if body.name=="player":
 			uiNode.visible=true
 		
+# @ UI隐藏			
 func _on_area_body_exited(body):
 	if body:
 		if body.name=="player":
 			uiNode.visible=false
 			
 
-
+# @ 搜寻按钮按下
 
 func _on_seachButton_pressed():
 
@@ -43,7 +44,10 @@ func _on_seachButton_pressed():
 		dataSeachItem()
 		pass
 	
+# 执行搜寻
+
 func dataSeachItem()->void:
 	itemStore.clear()
+	return
 	# get in bag
 	pass

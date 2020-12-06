@@ -8,6 +8,7 @@ onready var Normalmovetimer:Timer =$tNormalMoveTimer
 onready var moveTypeTimer:Timer=$tMoveTypeChangeTimer
 onready var targetArea2d =$nCharacterArea2d/CollisionShape2D
 onready var characterWeaponNode =$nCharacterWeapon
+onready var nameLable:RichTextLabel=$nCharacterUI/Control/nNameLable
 
 
 onready var player =get_tree().get_root().find_node("player",true,false)
@@ -29,8 +30,6 @@ var getInfastMoveType=false #进入快速移动模式
 
 var attackDesireValue = 0  #进攻欲望
 
-
-
 var playerinRange=false # 玩家在范围
 
 var randomMoveTimeCutValueRange={     # 随机移动间隔范围
@@ -41,9 +40,12 @@ var randomMoveTimeCutValueRange={     # 随机移动间隔范围
 var hp =5000
 var homePosition   # 初始位置
 
+var isOpenRamdonName=true # 打开随机名字
 
+# @主函数
 
 func _ready():
+	ramdomName()
 	homePosition=position
 	iniAImove()
 	
@@ -57,32 +59,35 @@ func _physics_process(delta):
 	
 	
 	move_and_slide(moveVec)
+	AIstateFunc()
 	
-	# 状态机
-	if stateAi.has("move"):
-		allowMove=true
-	else:
-		allowMove=false    
+
+
+# @ 行为状态机
+func AIstateFunc():
+		# 状态机
+		if stateAi.has("move"):
+			allowMove=true
+		else:
+			allowMove=false    
+		
+		if stateAi.has("attck"):
+			stateAIattack()
+			pass	
 	
-	if stateAi.has("attck"):
-		stateAIattack()
-
-		pass	
-
-	if stateAi.has("follow") and !stateAi.has("move"):
-		stateAIfloowPlayer()
+		if stateAi.has("follow") and !stateAi.has("move"):
+			stateAIfloowPlayer()
+		
+	
 
 
-func _draw():
-	#draw_line(position,player.position,Color(0, 0, 1),0.5,false)
-	pass		
+#@ 移动行为初始化 
 func iniAImove():
-	# 初始化移动行为
+	
 	Normalmovetimer.wait_time=moveTimecut
 	Normalmovetimer.start()
 	
-
-# ------------------------------------------------------------------动作状态
+# @ 移动状态
 func stateAImove():
 	# 移动
 	moveVec=Vector2.ZERO
@@ -104,16 +109,16 @@ func stateAImove():
 
 
 	#bug.log("character",moveType,false)
-	
+# @ 攻击状态	
 func stateAIattack():
 	# 攻击
 	pass  
-	
+# @ 跟随玩家状态
 func stateAIfloowPlayer():
 	
-
-	var followDistance = 230 # 跟随极限距离
-	# 跟随玩家 自动寻路
+	#  跟随极限距离
+	var followDistance = 230 
+	#  跟随玩家 自动寻路
  
 	var dir = global_position.direction_to(player.global_position)*aiMoveSpeed
 	if global_position.distance_to(player.global_position)>followDistance:
@@ -123,19 +128,15 @@ func stateAIfloowPlayer():
 	
 	
 	pass
-	
+# @ AILoot状态	
 func stateAIloot():
 	# 拾取道具 
 	pass
 	
- 
-# ---------------------------------------------------------------指向状态    
 
-func statePointDie():
-   pass     
 
-# ---------------------------------------------------------------- 移动计时器 
 
+# @ 普通移动计时器 
 func _on_tNormalMoveTimer_timeout():
 	# MoveCutTimer
 
@@ -149,8 +150,7 @@ func _on_tNormalMoveTimer_timeout():
 			else:
 				# random move type
 				Normalmovetimer.wait_time=int(rand_range(randomMoveTimeCutValueRange.min,randomMoveTimeCutValueRange.max))
-
-
+				
 				
 				stateAImove()
 
@@ -166,7 +166,7 @@ func _on_tNormalMoveTimer_timeout():
 		
 	pass # Replace with function body.
 
-
+# @ 移动状态计时器
 func _on_tMoveTypeChangeTimer_timeout():
 		
 		# move type change timer
@@ -181,19 +181,40 @@ func _on_tMoveTypeChangeTimer_timeout():
 	
 
 	
-# ------------------------------------------------------------------Human Little Trick		
 
-#node
-func contactGetHurt(dmg):
-	#受到伤害
+
+# @AI 被攻击承受伤害
+func contactGetHurt(dmg)->void:
+	#get hurt
 	hp-=dmg
 	#bug.log("character","currenthp"+str(hp),false)
 	if hp<=0:
 		hp=0
+		allowMove=false
 
+
+
+# @ AI 随机名字		
+func ramdomName ()->bool:
 	
+	#ramdom Name  
 
+	var characterNameData =[
+		"catgrils","iamBot","dudu__","twicth_yukiuiu","old_momh","wrisGuy_","chineseBoy"
+	]
 
+	if isOpenRamdonName:
+		var tempNumber = int(rand_range(-1,9))
+		var detctName = characterNameData[tempNumber]
+		nameLable.bbcode_text="[center]"+detctName
+		return true
+
+	else:
+		return false
+		
+		pass
+
+	pass
 
 
 

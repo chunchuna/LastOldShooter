@@ -11,6 +11,7 @@ var dmg =0
 var recoil =1
 var father # 所属武器
 var mouse_pos
+var type ="self"
 
 func _ready():
 	#look_at(get_global_mouse_position())

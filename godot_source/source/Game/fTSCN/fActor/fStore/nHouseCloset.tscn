@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game/fTSCN/fActor/nBaseActor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/fTSCN/fActor/fStore/nStoreNodet.tscn" type="PackedScene" id=2]
+
+[node name="nHouseCloset" instance=ExtResource( 1 )]
+
+[node name="StaticBody2D" parent="." index="1"]
+visible = true
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2( -7.85721, -83.062 )
+
+[node name="nStoreNODE" parent="." index="2" instance=ExtResource( 2 )]
+z_index = 1
+node_name = "Closet"
+
+[node name="cBox" parent="nStoreNODE/nDebugDraw" index="1"]
+margin_left = -62.7551
+margin_top = -173.715
+margin_right = 52.2449
+margin_bottom = 4.28497
+
+[node name="area" parent="nStoreNODE" index="1"]
+position = Vector2( -3.36737, -74.6436 )
+
+[node name="seachButton" parent="nStoreNODE/nUI" index="0"]
+margin_left = -26.7361
+margin_top = -19.9527
+margin_right = 20.2639
+margin_bottom = 0.0472603
+
+[node name="nameLable" parent="nStoreNODE/nUI" index="1"]
+margin_left = -43.601
+margin_top = -199.677
+margin_right = 35.399
+margin_bottom = -182.677
+
+[editable path="nStoreNODE"]
+
+[editable path="nStoreNODE/nDebugDraw"]

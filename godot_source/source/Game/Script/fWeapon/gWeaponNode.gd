@@ -50,8 +50,17 @@ func _ready():
 	fire_light.visible=false
 	LoadWeaponData()
 	pass
+
 	
+func _physics_process(delta):
 	
+		if has_weapon:
+			get_input()
+		else:
+			weapon_spr.texture=null		
+
+
+# @ 读取武器数据	
 func LoadWeaponData():
 	# 读取数据
 	# 导入武器配置
@@ -88,6 +97,11 @@ func LoadWeaponData():
 
 	
 	pass	
+
+
+
+
+# @ 玩家输入检测
 func get_input():
 	
 		if !ConsoleMain.console_active: #检查控制台是否打开
@@ -116,17 +130,11 @@ func get_input():
 			if Input.is_action_just_pressed("reloading_bullet"):
 				readlingBullet()	
 
-func _physics_process(delta):
-	
-	if has_weapon:
-		get_input()
-	else:
-		weapon_spr.texture=null	
 
-	
+
+# @ 武器攻击	
 func attack ():
 	# 攻击
-	
 	# Gun 
 	if weaponType =="Gun":
 		if bullet_current>0 and canShoot and can_fire:
@@ -150,8 +158,8 @@ func attack ():
 			get_tree().get_root().add_child(thisBullet)
 			thisBullet.global_position=gunFirePos.global_position
 			bullet_current-=1
+			
 			#print("枪支剩余弹药:",bullet_current)
-	
 	
 	elif weaponType =="close":
 		# 近程武器
@@ -161,7 +169,7 @@ func attack ():
 	
 	pass
 	
-	
+# @ 换子弹	
 func readlingBullet():
 	#换子弹
 	if bullet_current<=0 and WeaponData.allBulletNumber-bullet_max>0:
@@ -170,9 +178,7 @@ func readlingBullet():
 	else:
 		print("弹药库子弹不足！！")	
 		
-	
-
-
+# @ 开火计时器	
 func _on_fire_timer_timeout():
 	can_fire=true
 	pass # Replace with function body.

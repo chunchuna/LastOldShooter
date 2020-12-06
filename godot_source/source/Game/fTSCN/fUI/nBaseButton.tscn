@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Game/Script/fButton/gBaseButton.gd" type="Script" id=1]
+[ext_resource path="res://Game/Theme/uiTheme.tres" type="Theme" id=2]
 
 [node name="bDoorButton" type="Button" groups=[
 "gUI",
@@ -13,6 +14,7 @@ margin_top = 102.593
 margin_right = 55.1895
 margin_bottom = 110.593
 mouse_default_cursor_shape = 2
+theme = ExtResource( 2 )
 text = "Open"
 script = ExtResource( 1 )
 __meta__ = {

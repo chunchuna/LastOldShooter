@@ -9,6 +9,20 @@ func _ready():
 	pass
 
 
+
+func _physics_process(delta):
+	
+	if !ConsoleMain.console_active: get_input()  # 获取移动
+	move_and_slide(vec)
+	 #执行移动
+	pass
+	
+func _process(delta):
+	animationManneger()
+	pass
+
+
+# @玩家输入
 func get_input():
 	vec=Vector2.ZERO
 	if Input.is_action_pressed("right"):
@@ -22,19 +36,12 @@ func get_input():
 	if Input.is_action_pressed("down"):
 		vec.y+=1
 		
-	vec =vec.normalized()*speed
+	vec =vec.normalized()*speed	
 
-func _physics_process(delta):
-	
-	if !ConsoleMain.console_active: get_input()  # 获取移动
-	move_and_slide(vec)
-	 #执行移动
-	pass
-	
-func _process(delta):
-	animationManneger()
-	pass
 
+
+
+# @ Player动画控制器	
 func animationManneger ():
 	# 动画控制
 	if vec!=Vector2(0,0):

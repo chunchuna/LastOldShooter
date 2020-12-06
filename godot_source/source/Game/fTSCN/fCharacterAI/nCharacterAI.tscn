@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Game/Art/Player/Player.png" type="Texture" id=1]
 [ext_resource path="res://Game/Script/fCharacter/fCharacterAI/gCharacterAI.gd" type="Script" id=2]
 [ext_resource path="res://Game/Script/fWeapon/gHurtBox.gd" type="Script" id=3]
-[ext_resource path="res://Game/Art/weaponTexture/M4A1.png" type="Texture" id=4]
+[ext_resource path="res://Game/Art/weaponTexture/gun.png" type="Texture" id=4]
 [ext_resource path="res://Game/Script/fCharacter/fCharacterAI/gCharacterWeapon.gd" type="Script" id=5]
 [ext_resource path="res://Game/fTSCN/fDebug/nDebugDraw.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/Art/fire_light.png" type="Texture" id=7]
+[ext_resource path="res://Game/fTSCN/bullet.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 31.2404
@@ -13,7 +15,23 @@ radius = 31.2404
 [sub_resource type="CircleShape2D" id=2]
 radius = 16.3012
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="Animation" id=3]
+resource_name = "shootAnima"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("sGunSprite/sFireLight:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 454.025, 392.754 )
 
 [node name="nCharacterAI" type="KinematicBody2D" groups=[
@@ -51,11 +69,24 @@ shape = SubResource( 2 )
 [node name="nCharacterWeapon" type="Node2D" parent="."]
 position = Vector2( 0.667419, -29.6663 )
 script = ExtResource( 5 )
+bullet = ExtResource( 8 )
 
-[node name="Sprite" type="Sprite" parent="nCharacterWeapon"]
-position = Vector2( 12.8514, 2.99658 )
-scale = Vector2( 0.223605, 0.223605 )
+[node name="sGunSprite" type="Sprite" parent="nCharacterWeapon"]
+position = Vector2( 6.33598, 4.96089 )
+scale = Vector2( 0.156415, 0.156415 )
 texture = ExtResource( 4 )
+
+[node name="sFireLight" type="Sprite" parent="nCharacterWeapon/sGunSprite"]
+visible = false
+position = Vector2( 147.982, -35.6927 )
+scale = Vector2( 1.4613, 1.12521 )
+texture = ExtResource( 7 )
+
+[node name="tShootTimer" type="Timer" parent="nCharacterWeapon"]
+wait_time = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="nCharacterWeapon"]
+anims/shootAnima = SubResource( 3 )
 
 [node name="nCharacterUI" type="Node2D" parent="."]
 position = Vector2( 0, -17 )
@@ -87,7 +118,7 @@ z_index = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="nCharacterArea2d"]
 visible = false
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="tNormalMoveTimer" type="Timer" parent="."]
 
@@ -98,6 +129,7 @@ autostart = true
 [node name="nDebugDraw" parent="." instance=ExtResource( 6 )]
 isDrawCbox = true
 [connection signal="body_shape_entered" from="nBeHurt/Area2D" to="nBeHurt" method="_on_Area2D_body_shape_entered"]
+[connection signal="timeout" from="nCharacterWeapon/tShootTimer" to="nCharacterWeapon" method="_on_tShootTimer_timeout"]
 [connection signal="body_shape_entered" from="nCharacterArea2d" to="nCharacterWeapon" method="_on_nCharacterArea2d_body_shape_entered"]
 [connection signal="body_shape_exited" from="nCharacterArea2d" to="nCharacterWeapon" method="_on_nCharacterArea2d_body_shape_exited"]
 [connection signal="timeout" from="tNormalMoveTimer" to="." method="_on_tNormalMoveTimer_timeout"]

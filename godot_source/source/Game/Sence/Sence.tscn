@@ -1,23 +1,23 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game/fTSCN/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Game/Script/fNavigatationFindPath/Navigation2D.gd" type="Script" id=2]
+[ext_resource path="res://Game/fTSCN/fActor/fStore/nHouseCloset.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/fTSCN/SenceCamera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/fTSCN/fInterRactionLayer/nTestNpc.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game/fTSCN/fModSystem/modSystem.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Sence/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/fTSCN/fHouse/House.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Game/fTSCN/fCharacterAI/nCharacterAI.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Game/fTSCN/fHouse/nHouseCloset.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Game/fTSCN/fActor/nLittleDesk.tscn" type="PackedScene" id=9]
 
 [node name="Sence" type="Node2D"]
 position = Vector2( 0.840881, 0.840942 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -2994.51
-margin_top = -1116.73
-margin_right = 3215.49
-margin_bottom = 3297.27
+margin_left = -2995.77
+margin_top = -1115.47
+margin_right = 3214.23
+margin_bottom = 3298.53
 color = Color( 0.239216, 0.227451, 0.227451, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -34,6 +34,14 @@ editor_draw_screen = false
 
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( -6.10352e-05, 0 )
+
+[node name="nLittleDesk" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -501.841, 231.159 )
+z_index = 1
+
+[node name="nHouseCloset" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -110.072, 268.185 )
+z_index = 1
 
 [node name="player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( -88.2439, 848.195 )
@@ -59,18 +67,11 @@ position = Vector2( 805.209, 112.107 )
 [node name="test-man" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 685.097, 112.107 )
 
-[node name="nHouseCloset" parent="YSort" instance=ExtResource( 14 )]
-position = Vector2( -130.392, 202.21 )
-z_index = 1
-
 [node name="Box" type="Node2D" parent="."]
-
-[node name="Navigation2D" type="Navigation2D" parent="."]
-script = ExtResource( 2 )
 
 [node name="gHouse" type="Node2D" parent="."]
 position = Vector2( 4.76215, -3.1748 )
 
 [node name="TestHouse1" parent="gHouse" instance=ExtResource( 7 )]
-position = Vector2( -604.338, 28.1552 )
+position = Vector2( -603.078, 28.1552 )
 doorLock = false
