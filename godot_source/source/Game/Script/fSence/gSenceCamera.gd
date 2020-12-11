@@ -7,8 +7,6 @@ var toShake =false
 onready var player_kin2d =get_parent().get_node("YSort/player")
 
 
-
-
 func _process(delta):
 	cameraMoveSystem()
 	ScreenShake()

@@ -43,6 +43,10 @@ export(PackedScene) var bullet_tscn
 #onready var bullet = load(bullet_tscn_path)
 
 
+#data
+var data =WeaponData
+onready var dataString =data.weaponString
+
 var bullet_clip =0 # 子弹夹
 
 func _ready():
@@ -66,13 +70,22 @@ func LoadWeaponData():
 	# 导入武器配置
 	# 读取数据库
 	
-	var data =WeaponData
-	var dataString =data.weaponString
 	if !dataString.has(weapon_name):
 		print("can not find data")
 		return
 	else:
+		# 读取武器数据
+		self.loadWeaponData_data()
+	pass	
+
+
+
+
+
+# @读取武器数据
+func loadWeaponData_data():
 		# type
+	
 		var get_wea_texture:StreamTexture=load(dataString[weapon_name].texture)	
 		# 贴图
 		weapon_spr.texture=get_wea_texture
@@ -94,12 +107,9 @@ func LoadWeaponData():
 		autoFire=dataString[weapon_name].AutoFire
 		
 	#print("已经读取数据")		
+		pass
 
 	
-	pass	
-
-
-
 
 # @ 玩家输入检测
 func get_input():
@@ -147,19 +157,10 @@ func attack ():
 				animation.play("Single_fire")
 
 			# ScreenShake
-			camera.toShake=true  
-			# 数据释放
-			var thisBullet =bullet_tscn.instance()  # 生成子弹
-			thisBullet.flyDir=global_rotation
-			thisBullet.flySpeed=bulletSpeed
-			thisBullet.recoil=recoil
-			thisBullet.dmg=damage
-			thisBullet.father =self  
-			get_tree().get_root().add_child(thisBullet)
-			thisBullet.global_position=gunFirePos.global_position
-			bullet_current-=1
+			camera.toShake=true
+			# 释放武器数据  
+			self.dataRealess()
 			
-			#print("枪支剩余弹药:",bullet_current)
 	
 	elif weaponType =="close":
 		# 近程武器
@@ -169,6 +170,24 @@ func attack ():
 	
 	pass
 	
+# @ 数据释放
+func dataRealess():
+	# 数据释放
+	var thisBullet =bullet_tscn.instance()  # 生成子弹
+	thisBullet.flyDir=global_rotation
+	thisBullet.flySpeed=bulletSpeed
+	thisBullet.recoil=recoil
+	thisBullet.dmg=damage
+	thisBullet.father =self  
+	get_tree().get_root().add_child(thisBullet)
+	thisBullet.global_position=gunFirePos.global_position
+	bullet_current-=1
+	
+	#print("枪支剩余弹药:",bullet_current)
+	pass	
+
+
+
 # @ 换子弹	
 func readlingBullet():
 	#换子弹

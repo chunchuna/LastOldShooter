@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game/Theme/uiTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Game/Script/fDebug/nDebugPanel.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 125.0
+height = 136.0
+
+[node name="nDebugPanel" type="Node2D"]
+modulate = Color( 1, 1, 1, 0.815686 )
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 219.0
+margin_bottom = 329.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileLable" type="Label" parent="Panel"]
+margin_left = 56.0
+margin_top = 8.0
+margin_right = 153.0
+margin_bottom = 44.0
+text = "debug window
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="Panel"]
+margin_top = 44.0
+margin_right = 219.0
+margin_bottom = 256.0
+max_columns = 5
+same_column_width = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+margin_top = 260.0
+margin_right = 219.0
+margin_bottom = 263.0
+color = Color( 0.160784, 0.152941, 0.152941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nButtonGroup" type="Node2D" parent="Panel"]
+
+[node name="DrawLineButton" type="Button" parent="Panel/nButtonGroup"]
+margin_left = 13.0
+margin_top = 286.0
+margin_right = 69.0
+margin_bottom = 311.0
+text = "DrawLine"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DrawCboxButton" type="Button" parent="Panel/nButtonGroup"]
+margin_left = 135.0
+margin_top = 286.0
+margin_right = 207.0
+margin_bottom = 311.0
+text = "DrawCbox"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MouseCheck" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseCheck"]
+visible = false
+position = Vector2( 110, 171 )
+shape = SubResource( 1 )
+[connection signal="mouse_entered" from="MouseCheck" to="." method="_on_MouseCheck_mouse_entered"]

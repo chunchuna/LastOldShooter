@@ -77,7 +77,6 @@ func _on_nCharacterArea2d_body_shape_entered(body_id, body, body_shape, area_sha
 	
 	if body:
 		if body.name=="player":
-			bug.log("characterWeapon","玩家进入范围",false)
 			playerInRange=true
 			canShoot=true
 		
@@ -86,7 +85,6 @@ func _on_nCharacterArea2d_body_shape_entered(body_id, body, body_shape, area_sha
 func _on_nCharacterArea2d_body_shape_exited(body_id, body, body_shape, area_shape):
 	if body:
 		if body.name=="player":
-			bug.log("characterWeapon","玩家离开",false)
 			isAimPlayer=false
 			playerInRange=false
 			canShoot=false

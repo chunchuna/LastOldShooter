@@ -1,16 +1,15 @@
 {
-    "editor.fontFamily": "'Cascadia Code PL',Consolas,monospace,,",
+    "editor.fontFamily": "微软雅黑,JetBrains Mono,monospace,'Cascadia Code PL',Consolas,",
     "godot_tools.editor_path": "c:\\Users\\Administrator\\Desktop\\Godot_v3.2.3-stable_win64.exe\\Godot_v3.2.3-stable_win64.exe",
     "editor.fontLigatures": null,
     "editor.fontWeight": null,
-    "editor.lineHeight": 17,
+    "editor.lineHeight": 15,
     "editor.showFoldingControls": "always",
     "editor.unfoldOnClickAfterEndOfLine": true,
     "npm.enableRunFromFolder": true,
     "editor.tabSize": 2,
     "editor.renderWhitespace": "none",
     "editor.cursorSmoothCaretAnimation": true,
-    "editor.fontSize": 15,
     
 
 }

@@ -24,6 +24,7 @@ func _ready():
 
 	# 角色后坐力
 	player.move_and_slide(Vector2(-cos(flyDir)*recoil,-sin(flyDir)*recoil))
+	
 	pass
 
 func _init():

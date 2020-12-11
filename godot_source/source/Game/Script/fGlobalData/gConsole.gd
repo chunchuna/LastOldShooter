@@ -31,14 +31,21 @@ func Weapon_CHANGE(weaponString):
 
 	var data =WeaponData.weaponString
 
+	print("data",weaponString)
+
+	
 	if data.has(weaponString):
 		weaponNode.weapon_name=weaponString
 		weaponNode.LoadWeaponData() # 重新读取数据 
-		Console.write_line("已更改当前武器")
+		Console.write_line("change weapon")
 	else:
-		Console.write_line('数据库找不到此武器')
-		Console.write_line(data)	
-	#print("data",data)
+		Console.write_line('can not find data')
+		
+		# 输入当前支持的武器列表数据
+		Console.write_line("weaponList:\n")
+		for i in data.keys():
+			Console.write(i+"\n")
+			pass	
 
 
 	

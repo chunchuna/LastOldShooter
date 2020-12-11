@@ -10,6 +10,7 @@ var flyDir =0 # 飞行方向
 var recoil=0
 var father 
 var dmg =0
+var type ="self"
 
 
 func _ready():

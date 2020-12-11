@@ -14,10 +14,11 @@
 position = Vector2( 0.840881, 0.840942 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -2995.77
-margin_top = -1115.47
-margin_right = 3214.23
-margin_bottom = 3298.53
+margin_left = -2995.84
+margin_top = -1115.84
+margin_right = 3214.16
+margin_bottom = 3298.16
+mouse_filter = 2
 color = Color( 0.239216, 0.227451, 0.227451, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -66,8 +67,6 @@ position = Vector2( 805.209, 112.107 )
 
 [node name="test-man" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 685.097, 112.107 )
-
-[node name="Box" type="Node2D" parent="."]
 
 [node name="gHouse" type="Node2D" parent="."]
 position = Vector2( 4.76215, -3.1748 )

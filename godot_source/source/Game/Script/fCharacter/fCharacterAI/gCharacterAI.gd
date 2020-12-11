@@ -73,20 +73,20 @@ func AIstateFunc():
 		
 		if stateAi.has("attck"):
 			stateAIattack()
-			pass	
-	
+			
 		if stateAi.has("follow") and !stateAi.has("move"):
 			stateAIfloowPlayer()
+			
 		
 	
-
+		pass
 
 #@ 移动行为初始化 
 func iniAImove():
 	
 	Normalmovetimer.wait_time=moveTimecut
 	Normalmovetimer.start()
-	
+	pass
 # @ 移动状态
 func stateAImove():
 	# 移动
@@ -106,7 +106,7 @@ func stateAImove():
 		moveVec.x+=1     
 		 
 	moveVec=moveVec.normalized()*aiMoveSpeed     
-
+	pass
 
 	#bug.log("character",moveType,false)
 # @ 攻击状态	
@@ -151,7 +151,6 @@ func _on_tNormalMoveTimer_timeout():
 				# random move type
 				Normalmovetimer.wait_time=int(rand_range(randomMoveTimeCutValueRange.min,randomMoveTimeCutValueRange.max))
 				
-				
 				stateAImove()
 
 
@@ -180,9 +179,6 @@ func _on_tMoveTypeChangeTimer_timeout():
 		pass # Replace with function body.
 	
 
-	
-
-
 # @AI 被攻击承受伤害
 func contactGetHurt(dmg)->void:
 	#get hurt
@@ -193,7 +189,7 @@ func contactGetHurt(dmg)->void:
 		allowMove=false
 
 
-
+	pass
 # @ AI 随机名字		
 func ramdomName ()->bool:
 	
@@ -212,7 +208,7 @@ func ramdomName ()->bool:
 	else:
 		return false
 		
-		pass
+		
 
 	pass
 

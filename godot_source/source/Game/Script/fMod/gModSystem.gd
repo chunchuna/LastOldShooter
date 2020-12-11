@@ -52,7 +52,7 @@ func load_mods():
 				mod_id+=1
 				var mode_full =mods_path+"/"+file_name
 				#print(mods_path+"/"+file_name)
-				ProjectSettings.load_resource_pack(mode_full, true)
+				ProjectSettings.load_resource_pack(mode_full, true)   
 				var mod_ =load("res://mod.tscn").instance()
 				add_child(mod_)
 				mod_list[file_name]={"name":mod_.name_}

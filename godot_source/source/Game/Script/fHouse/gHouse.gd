@@ -3,7 +3,7 @@ extends Node2D
 # 这里存放 House 的内容
 
 
-# About door
+# door
 
 export(bool) var doorLock=true
 onready var doorStaticshape =$nDoor/sDoorstatic/shape
@@ -25,13 +25,18 @@ onready var animation =$AnimationPlayer
 func _ready():
 	doorButton.visible=false
 	HouseAreaShape.visible=true
+	print("in notpad ++")
 	pass
-
+   
 
 
 func _process(delta):
 	doorStateController()
 	pass    
+
+	
+	
+	
 
 # @进入房门范围检测
 func _on_aDoorArea2d_body_shape_entered(body_id, body, body_shape, area_shape):
@@ -41,7 +46,7 @@ func _on_aDoorArea2d_body_shape_entered(body_id, body, body_shape, area_shape):
 			
 	else:
 		return        
-	
+	pass
 # @离开房门	范围检测
 func _on_aDoorArea2d_body_shape_exited(body_id, body, body_shape, area_shape):
 			
@@ -70,7 +75,7 @@ func _on_bDoorButton_pressed():
 		# door is open 
 		doorState="close"
 		print("you close the door")
-
+	pass
 # @ 房门状态控制管理
 func doorStateController():
 	
@@ -85,7 +90,7 @@ func doorStateController():
 		doorStaticshape.disabled=false   
 		doorButton.text="open"
 
-
+	pass
 	
 # @ 房门开放权限管理
 func mCheckDoorpromission ()->bool:
@@ -95,8 +100,8 @@ func mCheckDoorpromission ()->bool:
 	else:
 		return false	
 	
-
-
+	
+	pass
 # @进入房间范围检测
 func _on_aHouseArea2d_body_shape_entered(body_id, body, body_shape, area_shape):
 	# player in House 
@@ -107,7 +112,9 @@ func _on_aHouseArea2d_body_shape_entered(body_id, body, body_shape, area_shape):
 			animation.play("HouseMask")
 
 	
-
+	
+	
+	pass
 # @离开房间范围检测
 func _on_aHouseArea2d_body_shape_exited(body_id, body, body_shape, area_shape):
 	# player out Hose 
@@ -116,3 +123,7 @@ func _on_aHouseArea2d_body_shape_exited(body_id, body, body_shape, area_shape):
 			animation.play_backwards("HouseMask")
 			is_inHouse=false
 	pass # Replace with function body.
+
+	
+	
+	

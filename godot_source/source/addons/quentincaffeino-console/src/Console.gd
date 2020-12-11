@@ -50,8 +50,17 @@ func _init():
 	self._erase_bb_tags_regex = RegEx.new()
 	self._erase_bb_tags_regex.compile('\\[[\\/]?[a-z0-9\\=\\#\\ \\_\\-\\,\\.\\;]+\\]')
 
+func _process(delta):
+
+		self.fastHelpActive()
+		
+		pass
+	
+	
 
 func _ready():
+	print("ready")
+	
 	# Allow selecting console text
 	self.Text.set_selection_enabled(true)
 	# Follow console output (for scrolling)
@@ -214,3 +223,13 @@ func _set_protected(value):
 func _on_ConsoleText_meta_clicked(meta):
 	emit_signal("click_meta",meta)
 	pass # Replace with function body.
+
+# @快速激活 帮助
+func fastHelpActive ():
+	if Input.is_action_just_pressed("console_help") :
+		if ConsoleMain.console_active:
+			print("press help fast key")
+			Line.text="commands"
+		pass
+	pass
+	

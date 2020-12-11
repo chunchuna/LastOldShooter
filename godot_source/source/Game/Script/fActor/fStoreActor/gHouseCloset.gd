@@ -24,13 +24,15 @@ func _on_area_body_entered(body):
 		if body.name=="player":
 			uiNode.visible=true
 		
+
+	pass
 # @ UI隐藏			
 func _on_area_body_exited(body):
 	if body:
 		if body.name=="player":
 			uiNode.visible=false
 			
-
+	pass
 # @ 搜寻按钮按下
 
 func _on_seachButton_pressed():
@@ -38,13 +40,13 @@ func _on_seachButton_pressed():
 	# 触发 seach
 	if itemStore.empty():
 		bug.log("storeActore","空",false)
-		pass
+		
 	else:
 		print(itemStore)
 		dataSeachItem()
 		pass
 	
-# 执行搜寻
+# @ 执行搜寻
 
 func dataSeachItem()->void:
 	itemStore.clear()
