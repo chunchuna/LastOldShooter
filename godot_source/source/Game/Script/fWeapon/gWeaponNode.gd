@@ -131,7 +131,12 @@ func get_input():
 				
 				# 偏移处理
 				gunFirePos.position=fire_ex_pos
+			
+			
 				fire_light_spr.position=fire_light_spr_ex_pos
+			
+			
+			
 			#攻击
 			if Input.is_action_pressed("attack") and GlobalVar.vMouseOnui==false:
 				attack()	

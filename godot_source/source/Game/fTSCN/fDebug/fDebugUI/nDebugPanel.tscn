@@ -77,4 +77,6 @@ __meta__ = {
 visible = false
 position = Vector2( 110, 171 )
 shape = SubResource( 1 )
+[connection signal="item_selected" from="Panel/ItemList" to="." method="_on_ItemList_item_selected"]
+[connection signal="pressed" from="Panel/nButtonGroup/DrawLineButton" to="." method="_on_DrawLineButton_pressed"]
 [connection signal="mouse_entered" from="MouseCheck" to="." method="_on_MouseCheck_mouse_entered"]

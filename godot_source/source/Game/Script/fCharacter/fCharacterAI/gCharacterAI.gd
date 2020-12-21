@@ -106,7 +106,7 @@ func stateAImove():
 		moveVec.x+=1     
 		 
 	moveVec=moveVec.normalized()*aiMoveSpeed     
-	pass
+	return
 
 	#bug.log("character",moveType,false)
 # @ 攻击状态	
@@ -123,7 +123,6 @@ func stateAIfloowPlayer():
 	var dir = global_position.direction_to(player.global_position)*aiMoveSpeed
 	if global_position.distance_to(player.global_position)>followDistance:
 		dir =move_and_slide(dir)
-	
 	
 	
 	
@@ -189,7 +188,11 @@ func contactGetHurt(dmg)->void:
 		allowMove=false
 
 
-	pass
+	return
+
+
+	
+
 # @ AI 随机名字		
 func ramdomName ()->bool:
 	

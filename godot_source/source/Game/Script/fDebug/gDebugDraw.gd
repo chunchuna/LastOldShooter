@@ -36,7 +36,9 @@ func _process(delta):
 # @ 绘制导航线条
 func drawLineToplayer()->void:
 
-	line2d.add_point(selfNode.global_position-playerNode.global_position)
+	#line2d.add_point(selfNode.global_position-playerNode.global_position)
+	#line2d.add_point(playerNode.global_position-selfNode.global_position)
+	line2d.add_point(Vector2(0,0))
 	line2d.add_point(playerNode.global_position-selfNode.global_position)
 	
 	yield(get_tree().create_timer(0.5),"timeout")
