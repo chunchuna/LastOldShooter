@@ -124,8 +124,6 @@ func debugdraw (quest="null"):
 				debugg.isDrawCbox=true
 				pass		
 	
-	
-	
 	pass
 # CKICK META
 	

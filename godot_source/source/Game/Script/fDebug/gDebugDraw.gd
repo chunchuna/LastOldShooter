@@ -68,3 +68,7 @@ func _on_tLine2dTimer_timeout():
 		pass # Replace with function body.	
 
 
+# @ 绘制计时器初始化		
+func drwaTimerInit():
+
+	return

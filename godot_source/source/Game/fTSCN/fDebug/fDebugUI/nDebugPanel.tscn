@@ -52,21 +52,11 @@ __meta__ = {
 [node name="nButtonGroup" type="Node2D" parent="Panel"]
 
 [node name="DrawLineButton" type="Button" parent="Panel/nButtonGroup"]
-margin_left = 13.0
-margin_top = 286.0
-margin_right = 69.0
-margin_bottom = 311.0
+margin_left = 12.0
+margin_top = 281.0
+margin_right = 209.0
+margin_bottom = 309.0
 text = "DrawLine"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="DrawCboxButton" type="Button" parent="Panel/nButtonGroup"]
-margin_left = 135.0
-margin_top = 286.0
-margin_right = 207.0
-margin_bottom = 311.0
-text = "DrawCbox"
 __meta__ = {
 "_edit_use_anchors_": false
 }
