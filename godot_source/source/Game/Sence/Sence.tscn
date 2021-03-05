@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Game/fTSCN/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/fTSCN/fActor/fStore/nHouseCloset.tscn" type="PackedScene" id=2]
@@ -7,17 +7,27 @@
 [ext_resource path="res://Game/fTSCN/fModSystem/modSystem.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Sence/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/fTSCN/fHouse/House.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Game/fTSCN/fCharacterAI/nCharacterAI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/fTSCN/房子/房子.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Game/fTSCN/fActor/nLittleDesk.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Game/Art/House/sHouse_Floor.png" type="Texture" id=10]
+[ext_resource path="res://Game/fTSCN/房子/房屋门.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Game/fTSCN/fHouse/sVecWall.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Game/fTSCN/fHouse/sHorWall.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Game/Script/fHouse/房子.gd" type="Script" id=14]
+[ext_resource path="res://Game/Script/外部脚本/容器扩展脚本_store/容器扩展2.gd" type="Script" id=15]
+[ext_resource path="res://Game/Script/外部脚本/容器扩展脚本_store/容器扩展3.gd" type="Script" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 480.298, 275 )
 
 [node name="Sence" type="Node2D"]
 position = Vector2( 0.840881, 0.840942 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -2995.84
-margin_top = -1115.84
-margin_right = 3214.16
-margin_bottom = 3298.16
+margin_left = -3008.84
+margin_top = -1105.84
+margin_right = 3201.16
+margin_bottom = 3308.16
 mouse_filter = 2
 color = Color( 0.239216, 0.227451, 0.227451, 1 )
 __meta__ = {
@@ -44,23 +54,12 @@ z_index = 1
 position = Vector2( -110.072, 268.185 )
 z_index = 1
 
+[node name="nStoreNODE" parent="YSort/nHouseCloset" index="2"]
+itemStore = [  ]
+ExtermScript = ExtResource( 16 )
+
 [node name="player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( -88.2439, 848.195 )
-
-[node name="nCharacterAI" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( -434.614, 784.506 )
-
-[node name="nCharacterAI2" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( -413.41, 310.191 )
-
-[node name="nCharacterAI3" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( -436.432, 947.847 )
-
-[node name="nCharacterAI4" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( -446.835, 1027.8 )
-
-[node name="nCharacterAI5" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 244.593, 831.511 )
+position = Vector2( -340.841, 351.159 )
 
 [node name="test-man2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 805.209, 112.107 )
@@ -72,5 +71,91 @@ position = Vector2( 685.097, 112.107 )
 position = Vector2( 4.76215, -3.1748 )
 
 [node name="TestHouse1" parent="gHouse" instance=ExtResource( 7 )]
-position = Vector2( -603.078, 28.1552 )
+position = Vector2( -603.603, 28.3339 )
 doorLock = false
+
+[node name="房子" parent="gHouse" instance=ExtResource( 8 )]
+position = Vector2( -1168.6, 882.334 )
+houseName = "house_test1"
+
+[node name="房屋门" parent="gHouse/房子" index="2"]
+isLock = true
+
+[node name="房屋范围检测" parent="gHouse/房子" index="3"]
+visible = false
+
+[node name="房子2" type="Node2D" parent="gHouse"]
+position = Vector2( 158.397, 633.334 )
+script = ExtResource( 14 )
+houseName = "house_test2"
+
+[node name="地板" type="Node2D" parent="gHouse/房子2"]
+
+[node name="地板贴图" type="Sprite" parent="gHouse/房子2/地板"]
+position = Vector2( 519.801, 429.671 )
+scale = Vector2( 3.86126, 2.04263 )
+texture = ExtResource( 10 )
+
+[node name="墙壁结构体" type="Node2D" parent="gHouse/房子2"]
+position = Vector2( 0, -3 )
+
+[node name="sHorWall2" parent="gHouse/房子2/墙壁结构体" instance=ExtResource( 13 )]
+position = Vector2( 525.101, 96 )
+scale = Vector2( 4.03552, 0.758715 )
+
+[node name="sHorWall5" parent="gHouse/房子2/墙壁结构体" instance=ExtResource( 13 )]
+position = Vector2( 425.64, 426 )
+scale = Vector2( 3.13888, 0.758715 )
+
+[node name="sHorWall3" parent="gHouse/房子2/墙壁结构体" instance=ExtResource( 13 )]
+position = Vector2( 280.5, 768 )
+scale = Vector2( 2.1, 0.758715 )
+
+[node name="sHorWall4" parent="gHouse/房子2/墙壁结构体" instance=ExtResource( 13 )]
+position = Vector2( 823.532, 768 )
+scale = Vector2( 1.65226, 0.758715 )
+
+[node name="sVecWall" parent="gHouse/房子2/墙壁结构体" instance=ExtResource( 12 )]
+position = Vector2( 32, 343.744 )
+scale = Vector2( 0.108327, 2.75405 )
+
+[node name="sVecWall2" parent="gHouse/房子2/墙壁结构体" instance=ExtResource( 12 )]
+position = Vector2( 1016, 337.744 )
+scale = Vector2( 0.108327, 2.70605 )
+
+[node name="房屋门" parent="gHouse/房子2" instance=ExtResource( 11 )]
+position = Vector2( 577, 860 )
+isLock = true
+LockID = 1
+
+[node name="门实体" parent="gHouse/房子2/房屋门" index="1"]
+visible = false
+
+[node name="门范围检测" parent="gHouse/房子2/房屋门" index="2"]
+visible = false
+
+[node name="房屋范围检测" type="Node2D" parent="gHouse/房子2"]
+
+[node name="房屋内Area2d" type="Area2D" parent="gHouse/房子2/房屋范围检测"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gHouse/房子2/房屋范围检测/房屋内Area2d"]
+visible = false
+position = Vector2( 522, 440 )
+shape = SubResource( 1 )
+
+[node name="nHouseCloset" parent="gHouse/房子2" instance=ExtResource( 2 )]
+position = Vector2( 922, 301 )
+
+[node name="nStoreNODE" parent="gHouse/房子2/nHouseCloset" index="2"]
+itemStore = [  ]
+ExtermScript = ExtResource( 15 )
+[connection signal="body_entered" from="gHouse/房子2/房屋范围检测/房屋内Area2d" to="gHouse/房子2" method="in_house"]
+[connection signal="body_exited" from="gHouse/房子2/房屋范围检测/房屋内Area2d" to="gHouse/房子2" method="out_house"]
+
+[editable path="YSort/nHouseCloset"]
+
+[editable path="gHouse/房子"]
+
+[editable path="gHouse/房子2/房屋门"]
+
+[editable path="gHouse/房子2/nHouseCloset"]
